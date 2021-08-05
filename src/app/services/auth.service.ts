@@ -3,7 +3,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 // const AUTH_API = "https://cors-anywhere.herokuapp.com/https://covy.herokuapp.com/api/";
+// const AUTH_API = "https://cors-anywhere.herokuapp.com/https://djangoangulartest.herokuapp.com/user/";
+
 const AUTH_API = "https://djangoangulartest.herokuapp.com/user/";
+
+
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -31,4 +35,9 @@ export class AuthService {
       password
     }, httpOptions);
   }
+
+  signOut(): void {
+    window.sessionStorage.clear();
+  }
+
 }
