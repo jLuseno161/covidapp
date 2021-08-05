@@ -6,11 +6,11 @@ import { SigninComponent } from './component/signin/signin.component';
 import { SignupComponent } from './component/signup/signup.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'signin' },
+  { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'home', component:  LandingpageComponent},
-  { pathMatch: 'full', redirectTo: 'home', path: '' },
+  // { pathMatch: 'full', redirectTo: 'home', path: '' },
   { path: '**', component: PageNotfoundComponent },
 ];
 @NgModule({

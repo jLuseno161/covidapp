@@ -9,12 +9,15 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link" routerLinkActive='active' routerLink="/home" style="color: black">Infra health</a>
-      <a class="nav-item nav-link" routerLink="/repositories" style="color: black">Home</a>
+      <a class="nav-item nav-link" routerLink="/home" style="color: black">Home</a>
       
     </div>
       <ul class="navbar-nav ml-auto nav-flex-icons">
-        <a class="dropdown-item">Login</a>
-        <a class="dropdown-item">Register</a>
+        <!-- <a class="dropdown-item">Login</a>
+        <a class="dropdown-item">Register</a> -->
+        <a class="dropdown-item" routerLink="signin" >SignIn</a>
+        <a class="dropdown-item" routerLink="signup" >SingUp</a>
+
           <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
                   aria-haspopup="true" aria-expanded="false">
