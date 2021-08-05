@@ -7,11 +7,15 @@ import { TracingComponent } from './tracing/tracing.component';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
+import { ResultsComponent } from './results/results.component';
+import { DoctorInputComponent } from './doctor-input/doctor-input.component';
 @NgModule({
   declarations: [
     AppComponent,
     TracingComponent,
-    ProfileComponent
+    ProfileComponent,
+    ResultsComponent,
+    DoctorInputComponent
   ],
   imports: [
     BrowserModule,
