@@ -1,1 +1,38 @@
-<p>signup works!</p>
+<style>
+  a{
+    text-decoration: none;
+  }
+  </style>
+<div class="container mt-5" style="font-family: 'Yeon Sung', ;">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <form class="text-center border border-light p-5">
+
+        <p class="h4 mb-4">Sign Up</p>
+        <input type="text" id="defaultRegisterFormFirstName" class="form-control mb-4" placeholder="Username">
+        <div class="form-row mb-4">
+          <div class="col">
+            <input type="email" id="defaultRegisterFormEmail" class="form-control" placeholder="E-mail">
+          </div>
+          <div class="col">
+            <input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Phone number">
+          </div>
+        </div>
+        <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password"
+          aria-describedby="defaultRegisterFormPasswordHelpBlock">
+        <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+          At least 8 characters and 1 digit
+        </small>
+        <button class="btn btn-info my-4 btn-block" type="submit">Sign Up</button>
+
+        <hr>
+        <p>By clicking
+          <em>Sign up</em> you agree to our
+          <a href="" target="_blank">terms of service</a></p>
+        <p>All ready a member?
+          <a routerLink="/signin">SignIn
+          </a>
+      </form>
+    </div>
+  </div>
+</div>
