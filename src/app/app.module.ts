@@ -9,6 +9,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { authInterceptorProviders } from './helpers/auth.interceptor';
+
 
 @NgModule({
   declarations: [
@@ -24,9 +27,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AngularMaterialModule,
     FlexLayoutModule,
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  // providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
