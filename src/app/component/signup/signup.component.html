@@ -4,9 +4,8 @@
   }
 
 </style>
-<div class="container mt-5" style="font-family: 'Yeon Sung', ;">
-  <div class="row">
-    <div class="col-md-6 mx-auto">
+<div class="container mt-5" style="font-family: 'Yeon Sung', cursive;;">
+    <div class="col-md-6 mx-auto" style="margin-top:0px;  border: 1px solid gainsboro">
       <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate
         class="text-center border border-light p-5">
         <p class="h4 mb-4">Sign Up</p>
@@ -35,8 +34,8 @@
             </div>
           </div>
           <div class="col">
-            <input type="number" class="form-control" minlength="13" maxlength="13" placeholder="phone" name="phone" [(ngModel)]="form.phone" required
-              phone #phone="ngModel" />
+            <input type="number" class="form-control" minlength="13" maxlength="13" placeholder="phone" name="phone"
+              [(ngModel)]="form.phone" required phone #phone="ngModel" />
             <div class="alert-danger" *ngIf="phone.errors && f.submitted">
               <div *ngIf="phone.errors.required">Phone number is required</div>
               <div *ngIf="phone.errors.phone">
@@ -44,11 +43,11 @@
               </div>
               <div *ngIf="phone.errors.required">Phone number is required</div>
               <div *ngIf="phone.errors.minlength">
-               Phone number must be at least 13 characters
-             </div>
-             <div *ngIf="phone.errors.maxlength">
-               Phone number must be at most 13 characters
-             </div> -->
+                Phone number must be at least 13 characters
+              </div>
+              <div *ngIf="phone.errors.maxlength">
+                Phone number must be at most 13 characters
+              </div> -->
             </div>
           </div>
         </div>
@@ -96,8 +95,5 @@
           </a>
       </form>
     </div>
-  </div>
 </div>
-<script>
 
-</script>
