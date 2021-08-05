@@ -3,10 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 // const AUTH_API = "https://cors-anywhere.herokuapp.com/https://covy.herokuapp.com/api/";
-// const AUTH_API = "https://djangoangulartest.herokuapp.com/user/";
-
-const AUTH_API = "http://127.0.0.1:8000/user/";
-
+const AUTH_API = "https://djangoangulartest.herokuapp.com/user/";
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
