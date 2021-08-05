@@ -7,11 +7,13 @@ import { TracingComponent } from './tracing/tracing.component';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 @NgModule({
   declarations: [
     AppComponent,
     TracingComponent,
-    ProfileComponent
+    ProfileComponent,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,

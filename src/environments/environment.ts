@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl:"https://cors-anywhere.herokuapp.com/http://127.0.0.1:8000/profile/",
-  apiUrl2:"https://cors-anywhere.herokuapp.com/http://127.0.0.1:8000/contact/"
+  apiUrl:"https://djangoangulartest.herokuapp.com/profile/1",
+  apiUrl2:"https://djangoangulartest.herokuapp.com/contact/3"
 };
 
 /*
