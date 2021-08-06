@@ -9,16 +9,27 @@ import {ResultsRequestService} from '../results-service/results.service';
 })
 export class ResultsComponent implements OnInit {
 
-  results!: Results;
+  ItemsArray!: Results[];
+  // ItemsArray= [];
 
-  constructor(private resultsService: ResultsRequestService) { }
+  addNewInput(ItemsArray){
+    let inputLength = this.ItemsArray.length;
+    ItemsArray.id = inputLength+1;
+    this.ItemsArray.push(ItemsArray)
+  }
 
-  ngOnInit(): void {
-    this.resultsService.resultsRequest()
-    this.results = this.resultsService.results
+  constructor(private resultRequestService: ResultsRequestService) { }
+
+  ngOnInit() {
+    this.resultRequestService.getData().subscribe((res: any[])=>{
+      this.ItemsArray= res;
+      console.log (this.ItemsArray)
+    })  
   }
 
 }
+
+
 
 
 

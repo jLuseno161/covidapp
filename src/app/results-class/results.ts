@@ -1,4 +1,4 @@
 export class Results {
 
-    constructor(public name: string, public symptoms: string, public location: number ){}
+    constructor(public name: string, public symptoms: string, public location: string ){}
 }

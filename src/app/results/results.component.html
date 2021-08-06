@@ -1,4 +1,15 @@
-<p>results works!</p>
-<p>{{results.name}}</p>
-<p>{{results.symptoms}}</p>
-<p>{{results.location}}</p>
+<div class="container text-center" style="margin-top:5%">
+    <table>
+       <tbody>
+          <tr *ngFor="let item of ItemsArray">
+             <td>{{ item.name }}</td>
+             <td>{{ item.location }}</td>
+             <td>{{ item.symptoms}}</td>
+           
+          </tr>
+       </tbody>
+    </table>
+ </div>
+<div class="col-md-6">
+    <app-patient-input-form (addResult)="addNewInput($event)"></app-patient-input-form>
+</div>

@@ -1,3 +1,25 @@
-<p>doctor-input works!</p>
-<p>{{doctorInput.name}}</p>
-<p>{{doctorInput.remarks}}</p>
+<!-- <div *ngFor= "let doctor of doctorInput" >
+<p>{{doctor.name}}</p>
+<p>{{doctor.recomendations}}</p>
+<p>{{doctor.remarks}}</p>
+</div>
+<p>doctor-input works!</p> -->
+
+<div class="container text-center" style="margin-top:5%">
+    <table>
+       <tbody>
+          <tr *ngFor="let item of ItemsArray">
+             <td>{{ item.name }}</td>
+             <td>{{ item.status }}</td>
+             <td>{{ item.recomendations }}</td>
+             <td>{{ item.remarks}}</td>
+             <td>
+                <button type="button" >Edit</button>
+                <button type="button" >Delete</button>
+             </td>
+          </tr>
+       </tbody>
+    </table>
+    <app-doctor-input-form (addInput)="addNewStatus($event)"> </app-doctor-input-form>
+
+ </div>

@@ -1,5 +1,5 @@
 export class DoctorInput {
 
-    constructor(public name: string, public status: number, public recomendations: number,public remarks: string){}
+    constructor(public name: string, public status: string, public recomendations: string,public remarks: string){}
 
 }

@@ -9,13 +9,22 @@ import { from } from 'rxjs';
   styleUrls: ['./doctor-input.component.css']
 })
 export class DoctorInputComponent implements OnInit {
+  ItemsArray!: any[];
+  // ItemsArray= [];
 
-  doctorInput!: DoctorInput;
+  addNewStatus(ItemsArray){
+    let inputLength = this.ItemsArray.length;
+    ItemsArray.id = inputLength+1;
+    this.ItemsArray.push(ItemsArray)
+  }
+
   constructor(private doctorInputService: DoctorInputService) { }
 
-  ngOnInit(): void {
-    this.doctorInputService.doctorInputRequest()
-    this.doctorInput = this.doctorInputService.doctorInput
+  ngOnInit() {
+    this.doctorInputService.getData().subscribe((res: any[])=>{
+      this.ItemsArray= res;
+      console.log (this.ItemsArray)
+    })  
   }
 
 }
