@@ -6,7 +6,20 @@
 <p>doctor-input works!</p> -->
 
 <div class="container text-center" style="margin-top:5%">
-    <table>
+   <div class="row">
+      <div class="col-md-6">
+         <app-doctor-input-form (addInput)="addNewStatus($event)"> </app-doctor-input-form>
+      </div>
+      <div class="col-md-6">
+    <table class="table" style="margin-top:15%;">
+      <thead>
+         <tr class="table-primary">
+           <th scope="col">names</th>
+           <th scope="col">Status</th>
+           <th scope="col">Recommendations</th>
+           <th scope="col">Remarks</th>
+         </tr>
+       </thead>
        <tbody>
           <tr *ngFor="let item of ItemsArray">
              <td>{{ item.name }}</td>
@@ -20,6 +33,9 @@
           </tr>
        </tbody>
     </table>
-    <app-doctor-input-form (addInput)="addNewStatus($event)"> </app-doctor-input-form>
-
+   </div>
+</div>
  </div>
+
+ 
+       

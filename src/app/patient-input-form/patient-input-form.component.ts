@@ -1,5 +1,9 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { from } from 'rxjs';
+import { PatientInputService } from '../patient-input.service';
 import { Results } from '../results-class/results';
+import { ResultsRequestService } from '../results-service/results.service';
+
 
 @Component({
   selector: 'app-patient-input-form',
@@ -8,21 +12,21 @@ import { Results } from '../results-class/results';
 })
 export class PatientInputFormComponent implements OnInit {
 
-  newInput = new Results("","","");
-  @Output() addResult = new EventEmitter<Results>();
-  http: any;
 
-  submitInput(){
-    this.addResult.emit(this.newInput);
-
-    this.http.post('https://djangoangulartest.herokuapp.com/patientinpunt/', this.newInput).subscribe(
-    (response) => console.log(response),
-    (error) => console.log(error));
-      }
-    
-  constructor() { }
-
-  ngOnInit() {
+  newInput: any = {
+    symptoms: null,
+    location: null,
+  };
+  
+  constructor(private resultsService:PatientInputService) { }
+  ngOnInit(): void {
   }
-
+  submitInput(): void {
+    const { user, location,symptoms} = this.newInput;
+    this.resultsService.patient(location,symptoms ).subscribe(
+      data => {
+        console.log(data);
+      },
+    );
+  }
 }
