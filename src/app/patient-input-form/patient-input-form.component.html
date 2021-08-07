@@ -37,9 +37,9 @@
 
 
 <div class="container-fluid text-center" style="margin-top:5%">
-    <h2 class="text-center">checkin</h2>
-    <hr>
-    <form (ngSubmit)='submitInput()' name="form" #goalForm='ngForm'>
+    <h2 class="text-center"  >checkin</h2 >
+    <hr style="margin-left: 30%;">
+    <form (ngSubmit)='submitInput()' name="form" #goalForm='ngForm' style="margin-left: 30%;">
       <div class="form-group">
         <label for="name">Name</label>
         <input type="text" class="form-control" id="name" [(ngModel)]="newInput.name" name="name" #name='ngModel' required>
