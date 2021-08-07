@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { authInterceptorProviders } from './helpers/auth.interceptor';
 import { DocDashComponent } from './component/doc-dash/doc-dash.component';
+import { DoctorsComponent } from './component/doctors/doctors.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { DocDashComponent } from './component/doc-dash/doc-dash.component';
     SigninComponent,
     SignupComponent,
     DocDashComponent,
+    DoctorsComponent,
 
   ],
   imports: [
