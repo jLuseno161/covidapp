@@ -1,24 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <title>Map</title>
-  <base href="/" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-
-
-  
-  <script
-    src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBWTLpNCpgZ8M5TAv0ViEDT8LpbODG1bXI"></script>
-
-
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script>
     "use strict";
 
     function initMap() {
@@ -37,7 +16,7 @@
         zoomControl: true,
         streetViewControl: true
       });
-      const marker = new google.maps.Marker({ map: map, draggable: false });
+      const marker = new google.maps.Marker({map: map, draggable: false});
       const autocompleteInput = document.getElementById('location');
       const autocomplete = new google.maps.places.Autocomplete(autocompleteInput);
       autocomplete.addListener('place_changed', function () {
@@ -71,7 +50,7 @@
           return '';
         };
         document.getElementById('location').value = getAddressComp('street_number') + ' '
-          + getAddressComp('route');
+                  + getAddressComp('route');
         for (const component of componentForm) {
           // Location field is handled separately above as it has different logic.
           if (component !== 'location') {
@@ -86,22 +65,4 @@
         marker.setVisible(true);
       }
     }
-  </script>
-
-</head>
-
-<body>
-  <div class="container">
-    <app-root></app-root>
-
-
-  </div>
-
-
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWTLpNCpgZ8M5TAv0ViEDT8LpbODG1bXI&libraries=places&callback=initMap&channel=GMPSB_addressselection_v1_cABC"
-    async defer></script>
-
-</body>
-
-</html>
+  
