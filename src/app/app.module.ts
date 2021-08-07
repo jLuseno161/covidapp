@@ -4,9 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TracingComponent } from './tracing/tracing.component';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ProfileComponent } from './profile/profile.component';
 import { ResultsComponent } from './results/results.component';
 import { DoctorInputComponent } from './doctor-input/doctor-input.component';
 import { PatientInputFormComponent } from './patient-input-form/patient-input-form.component';
@@ -22,6 +21,7 @@ import { AngularMaterialModule } from './angular-material.module';
 // import { FlexLayoutModule } from '@angular/flex-layout';
 import { authInterceptorProviders } from './helpers/auth.interceptor';
 import { DocDashComponent } from './component/doc-dash/doc-dash.component';
+import { PatientDashComponent } from './component/patient-dash/patient-dash.component';
 
 
 
@@ -30,7 +30,6 @@ import { DocDashComponent } from './component/doc-dash/doc-dash.component';
   declarations: [
     AppComponent,
     TracingComponent,
-    ProfileComponent,
     ResultsComponent,
     DoctorInputComponent,
     PatientInputFormComponent,
@@ -41,7 +40,10 @@ import { DocDashComponent } from './component/doc-dash/doc-dash.component';
     FooterComponent,
     SigninComponent,
     SignupComponent,
+    TracingComponent,
     DocDashComponent,
+    PatientDashComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -49,11 +51,9 @@ import { DocDashComponent } from './component/doc-dash/doc-dash.component';
     BrowserAnimationsModule,
     AngularMaterialModule,
     // FlexLayoutModule,
-    FormsModule, 
+    FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    
-    
   ],
   // providers: [],
   providers: [authInterceptorProviders],
