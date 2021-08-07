@@ -1,0 +1,67 @@
+<!-- <div class="container-fluid">
+    <h2 class="text-center">Kindly fill in your details below</h2>
+    <hr>
+    <form (ngSubmit)='submitInput()' #inputForm='ngForm'>
+        <div class="form-group">
+
+            <label for="name">Name</label>
+            <input type="text" required class="form-control" [(ngModel)]="newInput.name" id="name" name="name"
+                #name='ngModel'>
+            <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                <p>Name is required</p>
+            </div>
+            <div class="form-group">
+
+                <label for="location">Location</label>
+                <input type="text" required class="form-control" [(ngModel)]="newInput.location" id="location"
+                    name="location" #location='ngModel'>
+                <div [hidden]="location.valid || location.pristine" class="alert alert-danger">
+                    <p>Location is required</p>
+                </div>
+            </div>
+            <div class="form-group">
+
+                <label for="symptoms">Symptoms</label>
+                <textarea class="form-control" id="symptoms" [(ngModel)]="newInput.symptoms" name="symptoms" rows="4"
+                    #symptoms='ngModel' required></textarea>
+                <div [hidden]="symptoms.valid || symptoms.pristine" class="alert alert-danger">
+                    <p>symptoms is required</p>
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-success">submit</button>
+            </div>
+        </div>
+    </form>
+</div> -->
+
+
+<div class="container-fluid text-center" style="margin-top:5%">
+    <h2 class="text-center"  >checkin</h2 >
+    <hr style="margin-left: 30%;">
+    <form (ngSubmit)='submitInput()' name="form" #goalForm='ngForm' style="margin-left: 30%;">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="newInput.name" name="name" #name='ngModel' required>
+      </div>
+      <!-- Display{{newInput.name}} -->
+      <!-- <div class="form-group">
+        <label for="user">User</label>
+        <input type="text" class="form-control" id="user" [(ngModel)]="newInput.user" name="user" #name='ngModel' required>
+      </div>-->
+      <div class="form-group">
+        <label for="location">Location</label>
+        <input type="text" class="form-control" id="location" [(ngModel)]="newInput.location" name="location"
+          #name='ngModel' required>
+      </div>
+      <div class="form-group">
+        <div class="form-group">
+          <label for="symptoms">Symptoms</label>
+          <input type="text" class="form-control" id="symptoms" [(ngModel)]="newInput.symptoms" name="symptoms"
+            #name='ngModel' required></div>
+      </div>
+      <!-- Display{{newInput.symptoms}} -->
+      <div class="form-group">
+        <button type="submit" class="btn btn-success">Submit</button></div>
+    </form>
+  </div>
