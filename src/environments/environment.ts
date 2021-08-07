@@ -4,8 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl:"https://djangoangulartest.herokuapp.com/profile/2",
-  apiUrl2:"https://djangoangulartest.herokuapp.com/contact/1"
+  
 };
 
 /*
