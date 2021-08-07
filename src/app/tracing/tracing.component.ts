@@ -1,25 +1,43 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Tracing } from '../tracing-class/tracing';
 import { TracingRequestService } from '../tracing-http/tracing-request.service';
+
 @Component({
   selector: 'app-tracing',
   templateUrl: './tracing.component.html',
   styleUrls: ['./tracing.component.css']
 })
 export class TracingComponent implements OnInit {
-  tracing!: Tracing;
-  traceses!:Tracing[];
-  addNewTracing(tracing: any){
-      let tracingLength = this.traceses.length;
-      tracing.id = tracingLength+1;
-      tracing.date = new Date(tracing.date.getTime());
-      this.tracing.push(tracing);
-  }
+    form:any = {
+        name : null,
+        contact:null,
+        date : null
+    };
+    isSuccessful = false;
+    isSignUpFailed = false;
+    errorMessage = '';
+    ItemsArray!: any[];
+    newTracing= new Tracing ("",0,new Date());
+    @Output()  addTracing =new EventEmitter<Tracing>();
+    // ItemsArray= [];
+    submitTrace(){
+        this.addTracing.emit(this.newTracing);
+        console.log(this.newTracing);
+    }
   constructor(private tracingService: TracingRequestService) { }
-  
-  ngOnInit() {
-    this.tracingService.tracingRequest()
-    this.tracing=this.tracingService.tracing
+
+  ngOnInit(): void {
+    this.tracingService.getData().subscribe((res: any[])=>{
+      this.ItemsArray= res;
+    })  
   }
+  onSubmit():void {
+      const {name,contact,date}= this.form;
+      this.tracingService.addData(name,contact,date).subscribe(
+        data => console.log("success"),
+        
+        err => console.log("error")
+      );
+  }
+
 }

@@ -3,14 +3,14 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <p>profile works!</p>
-            <p>{{profile.name}}</p>
+            
+            <h4>{{profile.name}}</h4>
             <p>{{profile.bio}}</p>
             <p>{{profile.location}}</p>
             <p>{{profile.profile_pic}}</p>
         </div>
         <div class="col-md-6">
-            <app-contact-form (addTracing)="addNewTracing($event)"></app-contact-form>
+            <app-tracing (addTrace)="addNewTracing($event)"></app-tracing>
         </div>
     </div>
 </div>
