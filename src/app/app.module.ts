@@ -15,6 +15,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { authInterceptorProviders } from './helpers/auth.interceptor';
+import { DocDashComponent } from './component/doc-dash/doc-dash.component';
+import { PatientDashComponent } from './component/patient-dash/patient-dash.component';
 
 
 @NgModule({
@@ -26,6 +28,8 @@ import { authInterceptorProviders } from './helpers/auth.interceptor';
     FooterComponent,
     SigninComponent,
     SignupComponent,
+    DocDashComponent,
+    PatientDashComponent,
 
   ],
   imports: [
