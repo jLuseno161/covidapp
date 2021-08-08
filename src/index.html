@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Map</title>
+  <title>CovidApp</title>
   <base href="/" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- font awsome -->
@@ -59,15 +59,13 @@
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
 
 
-  
-  <script
-    src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBWTLpNCpgZ8M5TAv0ViEDT8LpbODG1bXI"></script>
+
 
 
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script>
+  <script>
     "use strict";
 
     function initMap() {
@@ -78,6 +76,7 @@
         'country',
         'postal_code',
       ];
+
       const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 11,
         center: { lat: 37.4221, lng: -122.0841 },
@@ -135,17 +134,16 @@
         marker.setVisible(true);
       }
     }
+  initMap();
   </script>
 
 </head>
 
-<body class="mat-typography"> 
-    <app-root></app-root>
+<body class="mat-typography">
+  <app-root></app-root>
 
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWTLpNCpgZ8M5TAv0ViEDT8LpbODG1bXI&libraries=places&callback=initMap&channel=GMPSB_addressselection_v1_cABC"
-    async defer></script>
-     <!-- JQuery -->
+
+  <!-- JQuery -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <!-- Bootstrap tooltips -->
   <script type="text/javascript"
@@ -155,8 +153,8 @@
     src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js"></script>
- 
 
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWTLpNCpgZ8M5TAv0ViEDT8LpbODG1bXI&libraries=places&callback=initMap&channel=GMPSB_addressselection_v1_cABC"
+    async defer></script>
 </body>
-
-
