@@ -33,26 +33,6 @@ export class SigninComponent implements OnInit {
     }
   }
 
-  // onSubmit(): void {
-  //   const { username, password } = this.form;
-
-  //   this.authService.login(username, password).subscribe(
-  //     data => {
-  //       this.tokenStorage.saveToken(data.accessToken);
-  //       this.tokenStorage.saveUser(data);
-
-  //       this.isLoginFailed = false;
-  //       this.isLoggedIn = true;
-  //       this.roles = this.tokenStorage.getUser().roles;
-  //       this.reloadPage();
-  //     },
-  //     err => {
-  //       this.errorMessage = err.error.message;
-  //       this.isLoginFailed = true;
-  //     }
-  //   );
-  // }
-
   onSubmit() {
     this.authService.login(this.form).subscribe((res: Response) => {
       console.log(res)
@@ -67,7 +47,6 @@ export class SigninComponent implements OnInit {
       else{
         this.router.navigate(['patient']);
       }
-      // if(res[role]) == 'is_doctor'{}
 
     }, error => {
       console.log('error')
