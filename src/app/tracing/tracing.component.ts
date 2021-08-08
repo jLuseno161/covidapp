@@ -9,6 +9,7 @@ import { TracingRequestService } from '../tracing-http/tracing-request.service';
 })
 export class TracingComponent implements OnInit {
     form:any = {
+        user: null,
         name : null,
         contact:null,
         date : null
@@ -17,7 +18,7 @@ export class TracingComponent implements OnInit {
     isSignUpFailed = false;
     errorMessage = '';
     ItemsArray!: any[];
-    newTracing= new Tracing ("",0,new Date());
+    newTracing= new Tracing ("","",0,new Date());
     @Output()  addTracing =new EventEmitter<Tracing>();
     // ItemsArray= [];
     // submitTrace(){
@@ -40,8 +41,8 @@ export class TracingComponent implements OnInit {
   //     );
   // }
   submitTrace(): void {
-    const { name, contact,date} = this.newTracing;
-    this.tracingService.addData(name, contact, date).subscribe(
+    const {user, name, contact,date} = this.newTracing;
+    this.tracingService.addData(user, name, contact, date).subscribe(
       data => {
         console.log(data);
       

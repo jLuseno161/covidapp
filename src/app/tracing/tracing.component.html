@@ -99,11 +99,22 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <form (ngSubmit)='submitTrace()' #tracingForm='ngForm' name='form'>
+		  
         <div class="modal-header">
           <h4 class="modal-title">Add Contact</h4>
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         </div>
         <div class="modal-body">
+			<div class="form-group">
+				<label form=name>User</label>
+				<input type="text" class="form-control" id="name" [(ngModel)]="newTracing.user" #name='ngModel' name='user'
+				  required>
+				<div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+				  <p>Name is required</p>
+				</div>
+				Display {{newTracing.name}}
+			  </div>
+
           <div class="form-group">
             <label form=name>Name</label>
             <input type="text" class="form-control" id="name" [(ngModel)]="newTracing.name" #name='ngModel' name='name'
@@ -113,6 +124,8 @@
             </div>
             Display {{newTracing.name}}
           </div>
+
+
           <div class="form-group">
             <label>Phone</label>
             <input type="number" class="form-control" [(ngModel)]="newTracing.contact" name=contact #contact='ngModel'
