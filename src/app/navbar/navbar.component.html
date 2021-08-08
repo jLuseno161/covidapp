@@ -10,6 +10,8 @@
     <div class="navbar-nav">
       <a class="nav-item nav-link" routerLinkActive='active' routerLink="/home" style="color: black">Infra health</a>
       <a class="nav-item nav-link" routerLink="/home" style="color: black">Home</a>
+      <a class="nav-item nav-link" routerLink="/doctor" style="color: black">Doctors Dashboard</a>
+
       
     </div>
       <ul class="navbar-nav ml-auto nav-flex-icons">
@@ -25,8 +27,12 @@
               </a>
               <div class="dropdown-menu dropdown-menu-right dropdown-default"
                   aria-labelledby="navbarDropdownMenuLink-333">
-                  <a class="dropdown-item">Profile</a>
-                  <a class="dropdown-item" class="nav-link" (click)="logout()">Logout</a>
+                  <a class="dropdown-item" routerLink="/patient" >Profile</a>
+                  <a class="dropdown-item" class="nav-link" (click)="signOut()">Logout</a>
+                  <a class="dropdown-item" routerLink="/patientinput" >Pat Input</a>
+                  <a class="dropdown-item" routerLink="/docinput" >Doc Input</a>
+                  <a class="dropdown-item" routerLink="/results" >Results</a>
+                  <a class="dropdown-item" routerLink="/doccomponent" >Doc Component</a>
               </div>
           </li>
       </ul>

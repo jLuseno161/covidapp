@@ -3,6 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TracingComponent } from './tracing/tracing.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ResultsComponent } from './results/results.component';
+import { DoctorInputComponent } from './doctor-input/doctor-input.component';
+import { PatientInputFormComponent } from './patient-input-form/patient-input-form.component';
+import { DoctorInputFormComponent } from './doctor-input-form/doctor-input-form.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PageNotfoundComponent } from './page-notfound/page-notfound.component';
@@ -11,16 +18,22 @@ import { SigninComponent } from './component/signin/signin.component';
 import { SignupComponent } from './component/signup/signup.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material.module';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+// import { FlexLayoutModule } from '@angular/flex-layout';
 import { authInterceptorProviders } from './helpers/auth.interceptor';
-import { TracingComponent } from './tracing/tracing.component';
+import { DocDashComponent } from './component/doc-dash/doc-dash.component';
+import { PatientDashComponent } from './component/patient-dash/patient-dash.component';
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    TracingComponent,
+    ResultsComponent,
+    DoctorInputComponent,
+    PatientInputFormComponent,
+    DoctorInputFormComponent,
     LandingpageComponent,
     NavbarComponent,
     PageNotfoundComponent,
@@ -28,6 +41,8 @@ import { TracingComponent } from './tracing/tracing.component';
     SigninComponent,
     SignupComponent,
     TracingComponent,
+    DocDashComponent,
+    PatientDashComponent,
 
   ],
   imports: [
@@ -35,10 +50,10 @@ import { TracingComponent } from './tracing/tracing.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
-    FlexLayoutModule,
-    FormsModule, 
+    // FlexLayoutModule,
+    FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   // providers: [],
   providers: [authInterceptorProviders],
