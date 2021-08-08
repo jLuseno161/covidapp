@@ -26,7 +26,7 @@ import { PatientDashComponent } from './component/patient-dash/patient-dash.comp
 
 
 
-import { GoogleMapsModule } from '@angular/google-maps';
+// import { GoogleMapsModule } from '@angular/google-maps';
 
 import { CommonModule } from '@angular/common';
 // current location
@@ -62,7 +62,7 @@ import { MapComponent } from './component/map/map.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    GoogleMapsModule,
+    // GoogleMapsModule,
     MatCardModule,
     MatGoogleMapsAutocompleteModule,
     HttpClientModule,
