@@ -76,15 +76,24 @@
         'country',
         'postal_code',
       ];
+      navigator.geolocation.getCurrentPosition(
+        function (position) {
+          // initMap(position.coords.latitude, position.coords.longitude)
+          var lat = position.coords.latitude;
+          var lng = position.coords.longitude;
+          console.log(lat, lng)
 
-      const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 11,
-        center: { lat: 37.4221, lng: -122.0841 },
+          const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 15,
+        center: { lat, lng},
         mapTypeControl: false,
         fullscreenControl: true,
         zoomControl: true,
         streetViewControl: true
       });
+        });
+
+     
       const marker = new google.maps.Marker({ map: map, draggable: false });
       const autocompleteInput = document.getElementById('location');
       const autocomplete = new google.maps.places.Autocomplete(autocompleteInput);
@@ -134,7 +143,7 @@
         marker.setVisible(true);
       }
     }
-  initMap();
+    initMap();
   </script>
 
 </head>
