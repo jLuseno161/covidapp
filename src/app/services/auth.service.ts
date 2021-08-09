@@ -1,14 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-// import { LocalStorageService } from 'angular-2-local-storage';
 
-// const AUTH_API = "https://cors-anywhere.herokuapp.com/https://covy.herokuapp.com/api/";
-// const AUTH_API = "https://cors-anywhere.herokuapp.com/https://djangoangulartest.herokuapp.com/user/";
+import { Router } from '@angular/router';
 
-const AUTH_API = "https://djangoangulartest.herokuapp.com/user/";
-
-
+const AUTH_API = "https://djangoangulartest.herokuapp.com/";
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -18,24 +14,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthService {
-  constructor(private http: HttpClient) { }
-  // constructor(private http: Http, private localStorage: LocalStorageService) { }
-
-  login(username: string, password: string): Observable<any> {
-    return this.http.post(AUTH_API + 'login/', {
-      username,
-      password
-    }, httpOptions);
-  }
-  // isAuthenticated(): boolean{
-  //   if (this.localStorage.get('isLoggedIn')){
-  //     return true;
-  //   }
-  //   else{
-  //     return false;
-  //   }
-  // }
-
+  constructor(private http: HttpClient,private router: Router,) { }
 
   register(username: string, email: string, phone: string, role: string, password: string): Observable<any> {
     return this.http.post(AUTH_API + 'register/', {
@@ -47,8 +26,15 @@ export class AuthService {
     }, httpOptions);
   }
 
+
+  login(userdata): Observable<any> {
+    return this.http.post(AUTH_API + 'token/', userdata)
+  }
+
   signOut(): void {
-    window.sessionStorage.clear();
+    localStorage.clear();
+    this.router.navigate(['/']);
+
   }
 
 }
