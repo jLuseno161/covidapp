@@ -13,7 +13,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthService {
-  constructor(private http: HttpClient,private router: Router,) { }
+  constructor(private http: HttpClient, private router: Router,) { }
 
   register(username: string, email: string, phone: string, role: string, password: string): Observable<any> {
     return this.http.post(AUTH_API + 'register/', {
@@ -36,4 +36,11 @@ export class AuthService {
 
   }
 
+  getUsers(): Observable<any[]> {
+    return this.http.get<any[]>(AUTH_API + 'user/',);
+  }
+
+  getStatus(): Observable<any> {
+    return this.http.get<any[]>(AUTH_API + 'doctorsinpunt/',);
+  }
 }

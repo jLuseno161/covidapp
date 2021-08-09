@@ -22,6 +22,7 @@ export class TracingComponent implements OnInit {
   userContacts!: any[];
   user_id: any;
   username: string;
+  counter: number;
 
   // newTracing = new Tracing("", "", 0, new Date());
   @Output() addTracing = new EventEmitter<Tracing>();
@@ -33,6 +34,8 @@ export class TracingComponent implements OnInit {
     this.tracingService.getData().subscribe((res: any[]) => {
       this.ItemsArray = res;
       this.userContacts = this.ItemsArray.filter(id => id.user == this.user_id);
+      this.counter = this.userContacts.length
+      console.log(this.counter);
 
     })
   }
@@ -42,7 +45,6 @@ export class TracingComponent implements OnInit {
     this.tracingService.addData(user = this.user_id, name, contact, date).subscribe(
       data => {
         console.log(data);
-
       },
       err => {
         this.errorMessage = err.error.message;
