@@ -12,7 +12,8 @@ import { ResultsRequestService } from '../results-service/results.service';
 })
 export class PatientInputFormComponent implements OnInit {
 
-
+storedlocation: any;
+storedcoord: any;
   newInput: any = {
     symptoms: null,
     location: null,
@@ -20,8 +21,14 @@ export class PatientInputFormComponent implements OnInit {
   
   constructor(private resultsService:PatientInputService) { }
   ngOnInit(): void {
+    this.storedlocation = localStorage.getItem("address");
+    console.log(this.storedlocation)
+    this.storedcoord = localStorage.getItem("coordinates");
   }
   submitInput(): void {
+    this.storedlocation = localStorage.getItem("address")
+    this.storedcoord = localStorage.getItem("coordinates");
+    console.log(this.storedlocation)
     const { user, location,symptoms} = this.newInput;
     this.resultsService.patient(location,symptoms ).subscribe(
       data => {

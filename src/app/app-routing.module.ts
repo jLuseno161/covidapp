@@ -12,6 +12,8 @@ import { ResultsComponent } from './results/results.component';
 import { DoctorInputComponent } from './doctor-input/doctor-input.component';
 import { MapComponent } from './component/map/map.component';
 
+
+
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'signin', component: SigninComponent },
@@ -23,7 +25,7 @@ const routes: Routes = [
   { path:'docinput', component: DoctorInputFormComponent },
   { path: 'results', component: ResultsComponent },
   { path: 'doccomponent', component:  DoctorInputComponent},
- 
+  {path: 'googlemaps', component: MapComponent}, 
 
   // { pathMatch: 'full', redirectTo: 'home', path: '' },
   { path: '**', component: PageNotfoundComponent },

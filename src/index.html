@@ -76,24 +76,17 @@
         'country',
         'postal_code',
       ];
-      navigator.geolocation.getCurrentPosition(
-        function (position) {
-          // initMap(position.coords.latitude, position.coords.longitude)
-          var lat = position.coords.latitude;
-          var lng = position.coords.longitude;
-          console.log(lat, lng)
+      // var lat = position.coords.latitude;
+      // var lng = position.coords.longitude;
+      const map = new google.maps.Map(document.getElementById("map"), {
 
-          const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 15,
-        center: { lat, lng},
+        zoom: 11,
+        center: { lat: 37.4221, lng: -122.0841 },
         mapTypeControl: false,
         fullscreenControl: true,
         zoomControl: true,
         streetViewControl: true
       });
-        });
-
-     
       const marker = new google.maps.Marker({ map: map, draggable: false });
       const autocompleteInput = document.getElementById('location');
       const autocomplete = new google.maps.places.Autocomplete(autocompleteInput);
@@ -137,13 +130,33 @@
         }
       }
 
-      function renderAddress(place) {
+      function renderAddress(place, lat, lng) {
         map.setCenter(place.geometry.location);
         marker.setPosition(place.geometry.location);
         marker.setVisible(true);
+
+        var lat = place.geometry.location.lat(),
+          lng = place.geometry.location.lng();
+        console.log(lat, lng);
+
+
+        // document.getElementById("coordinates").innerHTML = (lat+ "," +lng);
+        document.getElementById("coordinates").value = (lat + "," + lng);
       }
+
     }
-    initMap();
+    function store() {
+      var address = document.getElementById("location").value;
+      var coordinates = document.getElementById("coordinates").value;
+      localStorage.setItem("address", address);
+      localStorage.setItem("coordinates", coordinates);
+      // console.log(address)
+      var storedlocation = localStorage.getItem("address")
+      var storedcoord = localStorage.getItem("coordinates");
+      // console.log(stored)
+      document.getElementById("mylocation").value = (storedcoord);
+      document.getElementById("mycoordinates").value = (storedlocation)
+    }
   </script>
 
 </head>
@@ -151,7 +164,9 @@
 <body class="mat-typography">
   <app-root></app-root>
 
-
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWTLpNCpgZ8M5TAv0ViEDT8LpbODG1bXI&libraries=places&callback=initMap&channel=GMPSB_addressselection_v1_cABC"
+    async defer></script>
   <!-- JQuery -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <!-- Bootstrap tooltips -->
@@ -163,7 +178,5 @@
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js"></script>
 
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWTLpNCpgZ8M5TAv0ViEDT8LpbODG1bXI&libraries=places&callback=initMap&channel=GMPSB_addressselection_v1_cABC"
-    async defer></script>
+
 </body>
