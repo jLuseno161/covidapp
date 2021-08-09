@@ -23,6 +23,7 @@ import { authInterceptorProviders } from './helpers/auth.interceptor';
 import { DocDashComponent } from './component/doc-dash/doc-dash.component';
 import { DoctorsComponent } from './component/doctors/doctors.component';
 import { PatientDashComponent } from './component/patient-dash/patient-dash.component';
+import { ContactsComponent } from './component/contacts/contacts.component';
 
 
 
@@ -45,7 +46,7 @@ import { PatientDashComponent } from './component/patient-dash/patient-dash.comp
     DocDashComponent,
     DoctorsComponent,
     PatientDashComponent,
-  
+    ContactsComponent,
 
   ],
   imports: [
