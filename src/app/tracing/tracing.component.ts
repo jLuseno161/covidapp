@@ -14,6 +14,8 @@ export class TracingComponent implements OnInit {
         contact:null,
         date : null
     };
+    username: string;
+
     isSuccessful = false;
     isSignUpFailed = false;
     errorMessage = '';
@@ -25,6 +27,8 @@ export class TracingComponent implements OnInit {
 
   ngOnInit(): void {
     
+    this.username = localStorage.getItem('username')
+
     this.tracingService.getData().subscribe((res: any[])=>{
       this.ItemsArray= res;
 

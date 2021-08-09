@@ -22,6 +22,7 @@ import { AngularMaterialModule } from './angular-material.module';
 import { authInterceptorProviders } from './helpers/auth.interceptor';
 import { DocDashComponent } from './component/doc-dash/doc-dash.component';
 import { PatientDashComponent } from './component/patient-dash/patient-dash.component';
+import { ContactsComponent } from './component/contacts/contacts.component';
 
 
 
@@ -43,6 +44,7 @@ import { PatientDashComponent } from './component/patient-dash/patient-dash.comp
     TracingComponent,
     DocDashComponent,
     PatientDashComponent,
+    ContactsComponent,
 
   ],
   imports: [
