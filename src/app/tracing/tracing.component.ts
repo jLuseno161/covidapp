@@ -20,26 +20,17 @@ export class TracingComponent implements OnInit {
     ItemsArray!: any[];
     newTracing= new Tracing ("","",0,new Date());
     @Output()  addTracing =new EventEmitter<Tracing>();
-    // ItemsArray= [];
-    // submitTrace(){
-    //     this.addTracing.emit(this.newTracing);
-    //     console.log(this.newTracing);
-    // }
+  
   constructor(private tracingService: TracingRequestService) { }
 
   ngOnInit(): void {
+    
     this.tracingService.getData().subscribe((res: any[])=>{
       this.ItemsArray= res;
+
     })  
   }
-  // onSubmit():void {
-  //     const {name,contact,date}= this.form;
-  //     this.tracingService.addData(name,contact,date).subscribe(
-  //       data => console.log("success"),
-        
-  //       err => console.log("error")
-  //     );
-  // }
+
   submitTrace(): void {
     const {user, name, contact,date} = this.newTracing;
     this.tracingService.addData(user, name, contact, date).subscribe(
