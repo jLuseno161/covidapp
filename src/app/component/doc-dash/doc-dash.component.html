@@ -2,10 +2,10 @@
 
 <html lang="en" dir="ltr">
 
-<body style="padding-top: 3%;">
+<body style="padding-top: 5%;">
   <div class="sidebar">
     <div class="logo-details">
-      <i class='bx bxl-c-plus-plus'></i>
+      <img src="https://img.icons8.com/ios-filled/50/000000/rod-of-asclepius.png"/>
       <span class="logo_name">Infrahealth</span>
     </div>
     <ul class="nav-links">
@@ -24,6 +24,12 @@
       <li>
         <a href="#">
           <i class='bx bx-list-ul'></i>
+          <span class="links_name">Doctors</span>
+        </a>
+      </li>
+      <li>
+        <a href="/patients"  routerLink="/patients">
+          <i class='bx bx-list-ul'></i>
           <span class="links_name">Patients</span>
         </a>
       </li>
@@ -31,18 +37,6 @@
         <a href="#">
           <i class='bx bx-pie-chart-alt-2'></i>
           <span class="links_name">Doctors Feedback</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bx-coin-stack'></i>
-          <span class="links_name">Stock</span>
-        </a>
-      </li>
-      <li class="log_out">
-        <a href="#">
-          <i class='bx bx-log-out'></i>
-          <span class="links_name">Log out</span>
         </a>
       </li>
     </ul>
@@ -63,7 +57,7 @@
         <div class="box">
           <div class="right-side">
             <div class="box-topic">Total Infections</div>
-            <div class="number">6,876</div>
+            <div class="number">{{pos}}</div>
             <div class="indicator">
               <i class='bx bx-up-arrow-alt'></i>
               <span class="text">Up from yesterday</span>
@@ -74,7 +68,7 @@
         <div class="box">
           <div class="right-side">
             <div class="box-topic">Negative Cases</div>
-            <div class="number">1,876</div>
+            <div class="number">{{neg}}</div>
             <div class="indicator">
               <i class='bx bx-up-arrow-alt'></i>
               <span class="text">Up from yesterday</span>
@@ -94,7 +88,7 @@
         <div class="box">
           <div class="right-side">
             <div class="box-topic">Possible Infections</div>
-            <div class="number">286</div>
+            <div class="number">{{possible}}</div>
             <div class="indicator">
               <i class='bx bx-down-arrow-alt down'></i>
               <span class="text">Down From Today</span>
@@ -105,6 +99,7 @@
       <div class="sales-boxes">
         <div class="recent-sales box">
           <div class="title">Possible infections</div>
+          <app-contacts></app-contacts>
           <div class="sales-details">
           </div>
           <div class="button">

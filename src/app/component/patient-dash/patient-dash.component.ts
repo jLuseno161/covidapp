@@ -8,12 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class PatientDashComponent implements OnInit {
   
   username: string;
+  user_id:any
 
   constructor() { }
 
   ngOnInit(): void {
     
     this.username = localStorage.getItem('username')
+    this.user_id = localStorage.getItem('user_id')
+
 
   }
 

@@ -31,14 +31,13 @@ export class TracingRequestService  {
   
   constructor(private httpClient: HttpClient) { }
 
- 
-
   getData(): Observable<any[]> {
     return this.httpClient.get<any[]>(this.api);
   }
   
-  addData (name:string,contact:number,date:Date): Observable<any>{
+  addData (user:string,name:string,contact:number,date:Date): Observable<any>{
       return this.httpClient.post(contactapi ,{
+        user,
         name,
         contact,
         date,
