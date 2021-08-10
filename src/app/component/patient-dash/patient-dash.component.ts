@@ -13,6 +13,8 @@ export class PatientDashComponent implements OnInit {
   patientsStatus: any;
   patient: any;
   patientsNames!: any[];
+  newArray: any[]
+  patientsStat: any[];
 
   constructor(private authService: AuthService) { }
 
@@ -25,8 +27,10 @@ export class PatientDashComponent implements OnInit {
       this.patientsNames = res;
       console.log(this.username)
       console.log(this.patientsNames)
-      this.patientsStatus = this.patientsNames.filter(patienty => patienty.name === this.username)
-      console.log(this.patientsStatus)
+      this.newArray = this.patientsNames.filter(patienty => patienty.name === this.username)
+      this.patientsStat = this.newArray.reverse();
+      this.patientsStatus = this.patientsStat[0]
+      console.log(this.patientsStat[0])
 
 
     })
