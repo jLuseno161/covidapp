@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DoctorInputService } from 'src/app/doctor-input-service/doctor-input.service';
+// import {DoctorInputService} from '../doctor-input-service/doctor-input.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { TracingRequestService } from 'src/app/tracing-http/tracing-request.service';
 
@@ -7,6 +9,8 @@ import { TracingRequestService } from 'src/app/tracing-http/tracing-request.serv
   templateUrl: './doc-dash.component.html',
   styleUrls: ['./doc-dash.component.css']
 })
+
+
 export class DocDashComponent implements OnInit {
   username: string;
   possibleContacts!: any[];
