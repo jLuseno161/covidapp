@@ -1,47 +1,53 @@
 <div class="container-fluid">
-    <h2 class="text-center">Kindly provide feedback here</h2>
-    <hr style="margin-left: 30%;">
-    <form (ngSubmit)='submitInput()' #inputForm='ngForm' style="margin-left: 30%;">
-        <div class="form-group">
+  <h2 class="text-center">Kindly provide feedback here</h2>
+  <hr style="margin-left: 30%;">
+  <form (ngSubmit)='submitInput()' #inputForm='ngForm' style="margin-left: 30%;">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <div class="form-group">
+        <select [(ngModel)]="newInput.name" [ngModelOptions]="{standalone: true}" id="name" name="name" required
+          class="form-control">
+          <option *ngFor="let patient of patients" [value]="patient.username">
+            {{patient.username}}
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="status">Status</label>
+        <select [(ngModel)]="newInput.status" [ngModelOptions]="{standalone: true}" id="status" name="status" required
+          class="form-control">
+          <option [value]="'positive'">
+            Positive
+          </option>
+          <option [value]="'negative'">
+            Negative
+          </option>
+        </select>
+      </div>
 
-            <label for="name">Name</label>
-            <input type="text" required class="form-control" [(ngModel)]="newInput.name" id="name" name="name"
-                #name='ngModel'>
-            <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
-                <p>Name is required</p>
-                Display {{newInput.name}}
-
-            </div>
-            <div class="form-group">
-
-                <label for="status">Status</label>
-                <input type="text" required class="form-control" [(ngModel)]="newInput.status" id="status"
-                    name="status" #status='ngModel'>
-                <div [hidden]="status.valid || status.pristine" class="alert alert-danger">
-                    <p>Status is required</p>
-                </div>
-            </div>
-            <div class="form-group">
-
-                <label for="recomendations">recomendations</label>
-                <textarea class="form-control" id="recomendations" [(ngModel)]="newInput.recomendations" name="recomendations" rows="4"
-                    #recomendations='ngModel' required></textarea>
-                <div [hidden]="recomendations.valid || recomendations.pristine" class="alert alert-danger">
-                    <p>recomendations is required</p>
-                </div>
-            </div>
-            <div class="form-group">
-
-                <label for="remarks">remarks</label>
-                <textarea class="form-control" id="remarks" [(ngModel)]="newInput.remarks" name="remarks" rows="4"
-                    #remarks='ngModel' required></textarea>
-                <div [hidden]="remarks.valid || remarks.pristine" class="alert alert-danger">
-                    <p>remarks is required</p>
-                </div>
-            </div>
-            <div>
-                <button class="btn btn-success">submit</button>
-            </div>
+      <div class="form-group">
+        <label for="recomendations">recomendations</label>
+        <select [(ngModel)]="newInput.recomendations" [ngModelOptions]="{standalone: true}" id="recomendations"
+          name="recomendations" required class="form-control">
+          <option [value]="'hospital care'">
+            Hospital Care
+          </option>
+          <option [value]="'home care'">
+            Home Care
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="remarks">remarks</label>
+        <textarea class="form-control" id="remarks" [(ngModel)]="newInput.remarks" name="remarks" rows="4"
+          #remarks='ngModel' required></textarea>
+        <div [hidden]="remarks.valid || remarks.pristine" class="alert alert-danger">
+          <p>remarks is required</p>
         </div>
-    </form>
+      </div>
+      <div>
+        <button class="btn btn-success">submit</button>
+      </div>
+    </div>
+  </form>
 </div>
