@@ -35,7 +35,7 @@ export class TracingComponent implements OnInit {
       this.ItemsArray = res;
       this.userContacts = this.ItemsArray.filter(id => id.user == this.user_id);
       this.counter = this.userContacts.length
-      console.log(this.counter);
+      // console.log(this.counter);
 
     })
   }

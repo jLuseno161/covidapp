@@ -23,7 +23,7 @@ export class DoctorInputComponent implements OnInit {
   ngOnInit() {
     this.doctorInputService.getData().subscribe((res: any[])=>{
       this.ItemsArray= res;
-      console.log (this.ItemsArray)
+      // console.log (this.ItemsArray)
     })  
   }
 
