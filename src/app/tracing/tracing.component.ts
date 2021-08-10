@@ -22,37 +22,32 @@ export class TracingComponent implements OnInit {
   userContacts!: any[];
   user_id: any;
   username: string;
-
+  counter: number;
 
   // newTracing = new Tracing("", "", 0, new Date());
   @Output() addTracing = new EventEmitter<Tracing>();
 
   constructor(private tracingService: TracingRequestService) { }
-
   ngOnInit(): void {
-
     this.username = localStorage.getItem('username')
     this.user_id = localStorage.getItem('user_id')
-
-
     this.tracingService.getData().subscribe((res: any[]) => {
       this.ItemsArray = res;
       this.userContacts = this.ItemsArray.filter(id => id.user == this.user_id);
+      this.counter = this.userContacts.length
+      console.log(this.counter);
 
     })
   }
-
   submitTrace(): void {
     this.user_id = localStorage.getItem('user_id')
     let { user, name, contact, date } = this.newTracing;
     this.tracingService.addData(user = this.user_id, name, contact, date).subscribe(
       data => {
         console.log(data);
-
       },
       err => {
         this.errorMessage = err.error.message;
-        this.isSignUpFailed = true;
 
       }
     );

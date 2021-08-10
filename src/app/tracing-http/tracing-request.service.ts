@@ -31,8 +31,6 @@ export class TracingRequestService  {
   
   constructor(private httpClient: HttpClient) { }
 
- 
-
   getData(): Observable<any[]> {
     return this.httpClient.get<any[]>(this.api);
   }

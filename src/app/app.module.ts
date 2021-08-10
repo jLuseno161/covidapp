@@ -24,6 +24,7 @@ import { DocDashComponent } from './component/doc-dash/doc-dash.component';
 import { DoctorsComponent } from './component/doctors/doctors.component';
 import { PatientDashComponent } from './component/patient-dash/patient-dash.component';
 import { ContactsComponent } from './component/contacts/contacts.component';
+import { PatientsComponent } from './component/patients/patients.component';
 
 
 
@@ -47,6 +48,7 @@ import { ContactsComponent } from './component/contacts/contacts.component';
     DoctorsComponent,
     PatientDashComponent,
     ContactsComponent,
+    PatientsComponent,
 
   ],
   imports: [
