@@ -35,5 +35,7 @@ storedcoord: any;
         console.log(data);
       },
     );
+
+    window.localStorage.clear(); 
   }
 }
