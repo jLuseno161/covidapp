@@ -73,8 +73,8 @@
         <div class="box">
           <div class="right-side">
             <div class="box-topic">My Status</div>
-            <div class="number" *ngFor="let patient of patientsStatus">
-              {{patient.status}}
+            <div class="number">
+              {{patientsStatus.status}}
             </div>
             <div class="indicator">
               <i class='bx bx-up-arrow-alt'></i>
@@ -82,19 +82,19 @@
             </div>
           </div>
         </div>
-        <div class="box">
+        <div class="box"  (click)="open(content)">
           <div class="right-side">
             <div class="box-topic">Checkin</div>
-            <div class="number">1,876</div>
+            <div class="number"></div>
             <div class="indicator">
-              <i class='bx bx-up-arrow-alt'></i>
+              <img src="https://img.icons8.com/ios/28/4a90e2/add--v1.png"/>
             </div>
           </div>
         </div>
         <div class="box">
           <div class="right-side">
-            <div class="box-topic">View Results</div>
-            <div class="number">16</div>
+            <div class="box-topic">Recommendations</div>
+            <div class="number">{{patientsStatus.recomendations}}</div>
             <div class="indicator">
               <i class='bx bx-up-arrow-alt'></i>
             </div>
@@ -102,6 +102,26 @@
         </div>
       </div>
       <div class="sales-boxes">
+        <!-- <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button> -->
+        <ng-template #content let-c="close" let-d="dismiss" style="margin-right: 20px;">
+          <div style="margin: 5%;">
+            <div class="modal-header">
+              <h2 class="modal-title" id="modal-basic-title">Checkin</h2>
+              <!-- <button type="button" class="close" style="border: 0px solid white" aria-label="Close" (click)="d('Cross click')">
+                <span aria-hidden="true">&times;</span>
+              </button> -->
+              <button type="button" class="btn btn-md btn-outline-success" style="padding:2%; color:white" (click)="d('Save click')">Close</button>
+
+            </div>
+            <div class="modal-body">
+              <app-patient-input-form></app-patient-input-form>
+            </div>
+            <!-- <div class="modal-footer">
+              <button type="button" class="btn btn-md btn-info" style="margin-top:2%; color:white" (click)="c('Save click')">Close</button>
+            </div> -->
+          </div>
+        </ng-template>
+
         <div class="recent-sales box">
           <div class="title">
             <h1 class="text-center"><b>Track patients contacts</b></h1>
@@ -110,9 +130,9 @@
 
           <div class="sales-details">
           </div>
-          <div class="button">
+          <!-- <div class="button">
             <a href="#">See All</a>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

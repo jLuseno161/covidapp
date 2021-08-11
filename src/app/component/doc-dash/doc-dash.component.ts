@@ -47,13 +47,7 @@ export class DocDashComponent implements OnInit {
       this.neg = this.negative.length
       console.log(this.neg)
     })
-  
-   
 
-      // this.pos = this.CaseStatus.filter(id => id.user == this.user_id);
-      // this.pos = this.CaseStatus.length
-
-        // this.pos = this.Positive.length
     })
 
   }

@@ -1,0 +1,59 @@
+<body>
+
+  <form method="POST" action="">
+    <div class="card-container maps">
+      <div class="panel mymaps">
+        <div>
+          <img class="sb-title-icon" src="https://fonts.gstatic.com/s/i/googlematerialicons/location_pin/v5/24px.svg"
+            alt="">
+          <span class="sb-title">Address Selection</span>
+        </div>
+        <input type="text" placeholder="Address" id="location" class="details"  [(ngModel)]="address" name="address" />
+        <div class="half-input-container">
+          <input type="text" class="half-input details" placeholder="County" id="administrative_area_level_1" /> 
+
+           <input type="text" placeholder="City" id="locality" class="half-input details" />
+        </div> 
+        <input type="text" placeholder="Country" class="details" id="country" />
+
+        <input type="text" placeholder="Cordinates" id="coordinates" class="details" [(ngModel)]="coordinates" name="coordinates" />
+
+
+        <button class="btn btn-primary" onclick="store()">Save</button>
+        <a class="btn btn-info" routerLink="/patientinput" class="btn btn-success">Submit</a>
+      </div>
+      <div class="map" id="map"></div>
+
+    </div>
+  </form>
+
+  <label for="location">Coordinates</label>
+
+  <input type="text" placeholder="my location" id="mylocation" />
+
+  <label for="location">Location</label>
+
+  <input type="text" placeholder="coordinates" id="mycoordinates" />
+
+
+  <!-- <h4> Add Location </h4>
+  <table>
+    <tr>
+      <td>Address</td>
+      <td> <input [(ngModel)]="address" name="address" type="text"></td>
+    </tr>
+    <tr>
+      <td>Coordinates</td>
+      <td> <input [(ngModel)]="coordinates" name="coordinates" type="text"></td>
+    </tr>
+  </table>
+  <button (click)="addLocation()"> Save</button>
+
+   -->
+  <script>
+    // var address = document.getElementById("location");
+    // localStorage.setItem("address", address.value);
+
+
+  </script>
+</body>

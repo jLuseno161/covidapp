@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
+import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-patient-dash',
   templateUrl: './patient-dash.component.html',
   styleUrls: ['./patient-dash.component.css']
+
 })
 export class PatientDashComponent implements OnInit {
 
@@ -13,9 +16,18 @@ export class PatientDashComponent implements OnInit {
   patientsStatus: any;
   patient: any;
   patientsNames!: any[];
+  newArray: any[]
+  patientsStat: any[];
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService ,config: NgbModalConfig, private modalService: NgbModal) {
+    // customize default values of modals used by this component tree
+    config.backdrop = 'static';
+    config.keyboard = false;
+  }
 
+  open(content) {
+    this.modalService.open(content);
+  }
   ngOnInit(): void {
 
     this.username = localStorage.getItem('username')
@@ -25,10 +37,10 @@ export class PatientDashComponent implements OnInit {
       this.patientsNames = res;
       console.log(this.username)
       console.log(this.patientsNames)
-      this.patientsStatus = this.patientsNames.filter(patienty => patienty.name === this.username)
-      console.log(this.patientsStatus)
-
-
+      this.newArray = this.patientsNames.filter(patienty => patienty.name === this.username)
+      this.patientsStat = this.newArray.reverse();
+      this.patientsStatus = this.patientsStat[0]
+      console.log(this.patientsStat[0])
     })
   }
   patients(patients: any) {

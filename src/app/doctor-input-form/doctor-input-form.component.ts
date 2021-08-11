@@ -37,6 +37,6 @@ export class DoctorInputFormComponent implements OnInit {
         // console.log(data);
       },
     );
-    window.location.reload();
+    // window.location.reload();
   }
 }
