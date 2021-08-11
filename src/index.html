@@ -7,10 +7,10 @@
   <title>Covidapp</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-   <!-- Favicons -->
-   <link href="assets/img/favicon.png" rel="icon">
-   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- font awsome -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -53,7 +53,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Charm:wght@700&display=swap">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Merienda:wght@400;700&display=swap">
-    
+
   <!-- Bootstrap core CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
   <!-- Material Design Bootstrap -->
@@ -65,10 +65,7 @@
 
 
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-
-
-
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"> -->
 
 
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -90,13 +87,19 @@
       const map = new google.maps.Map(document.getElementById("map"), {
 
         zoom: 11,
-        center: { lat: 37.4221, lng: -122.0841 },
+        center: {
+          lat: 37.4221,
+          lng: -122.0841
+        },
         mapTypeControl: false,
         fullscreenControl: true,
         zoomControl: true,
         streetViewControl: true
       });
-      const marker = new google.maps.Marker({ map: map, draggable: false });
+      const marker = new google.maps.Marker({
+        map: map,
+        draggable: false
+      });
       const autocompleteInput = document.getElementById('location');
       const autocomplete = new google.maps.places.Autocomplete(autocompleteInput);
       autocomplete.addListener('place_changed', function () {
@@ -112,7 +115,7 @@
         fillInAddress(place);
       });
 
-      function fillInAddress(place) {  // optional parameter
+      function fillInAddress(place) { // optional parameter
         const addressNameFormat = {
           'street_number': 'short_name',
           'route': 'long_name',
@@ -129,8 +132,8 @@
           }
           return '';
         };
-        document.getElementById('location').value = getAddressComp('street_number') + ' '
-          + getAddressComp('route');
+        document.getElementById('location').value = getAddressComp('street_number') + ' ' +
+          getAddressComp('route');
         for (const component of componentForm) {
           // Location field is handled separately above as it has different logic.
           if (component !== 'location') {
@@ -154,20 +157,26 @@
       }
 
     }
+
     function store() {
       var address = document.getElementById("location").value;
       var coordinates = document.getElementById("coordinates").value;
+      var locality = document.getElementById("locality").value
       localStorage.setItem("address", address);
       localStorage.setItem("coordinates", coordinates);
+      localStorage.setItem("locality"), locality;
       // console.log(address)
       var storedlocation = localStorage.getItem("address")
       var storedcoord = localStorage.getItem("coordinates");
+      var storedcity = localStorage.getItem("locality")
       // console.log(stored)
       document.getElementById("mylocation").value = (storedcoord);
       document.getElementById("mycoordinates").value = (storedlocation)
+      document.getElementById("locality").value = (storedcity)
     }
+
   </script>
-   
+
 
 </head>
 

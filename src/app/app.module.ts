@@ -1,6 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {LocationServiceService} from './component/location-service.service'
+// import {LocationServiceService} from './component/location-service.service'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TracingComponent } from './tracing/tracing.component';
@@ -83,7 +83,7 @@ import { MapComponent } from './component/map/map.component';
 
     BrowserAnimationsModule
   ],
-  providers: [authInterceptorProviders,NgbModalConfig, NgbModal,LocationServiceService],
+  providers: [authInterceptorProviders,NgbModalConfig, NgbModal],
   bootstrap: [AppComponent],
     
 

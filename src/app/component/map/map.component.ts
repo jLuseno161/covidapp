@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserLocation } from 'src/app/location';
-import { LocationServiceService } from '../location-service.service';
+// import { UserLocation } from 'src/app/location';
+// import { LocationServiceService } from '../location-service.service';
 
 import { HttpClient } from '@angular/common/http';
 import { LocationStorageService } from 'src/app/services/location-storage.service';
