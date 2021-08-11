@@ -5,7 +5,7 @@
 <body style="padding-top: 5%;">
   <div class="sidebar">
     <div class="logo-details">
-      <img src="https://img.icons8.com/ios-filled/50/000000/rod-of-asclepius.png"/>
+      <img src="https://img.icons8.com/ios-filled/50/000000/rod-of-asclepius.png" />
       <span class="logo_name">Infrahealth</span>
     </div>
     <ul class="nav-links">
@@ -28,7 +28,7 @@
         </a>
       </li>
       <li>
-        <a href="/patients"  routerLink="/patients">
+        <a href="/patients" routerLink="/patients">
           <i class='bx bx-list-ul'></i>
           <span class="links_name">Patients</span>
         </a>
@@ -36,7 +36,8 @@
       <li>
         <a href="#">
           <i class='bx bx-pie-chart-alt-2'></i>
-          <span class="links_name">Doctors Feedback</span>
+          <a class="dropdown-item" routerLink="/docinput"> <span class="links_name">Doctors Feedback</span>
+          </a>
         </a>
       </li>
     </ul>
@@ -63,7 +64,7 @@
               <span class="text">Up from yesterday</span>
             </div>
           </div>
-       
+
         </div>
         <div class="box">
           <div class="right-side">
@@ -75,16 +76,20 @@
             </div>
           </div>
         </div>
-        <div class="box">
+
+        <div class="box" routerLink="/results">
+
           <div class="right-side">
-            <div class="box-topic">Results</div>
+            <div class="box-topic">See patients</div>
             <div class="number">16</div>
             <div class="indicator">
               <i class='bx bx-up-arrow-alt'></i>
               <span class="text">Up from yesterday</span>
             </div>
           </div>
+
         </div>
+
         <div class="box">
           <div class="right-side">
             <div class="box-topic">Possible Infections</div>
@@ -114,7 +119,7 @@
                 <span class="product">kibra olympic</span>
               </a>
               <span class="price">107</span>
-            </li>  
+            </li>
           </ul>
         </div>
       </div>
@@ -130,6 +135,8 @@
       } else
         sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
     }
+
   </script>
 </body>
+
 </html>

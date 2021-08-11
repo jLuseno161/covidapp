@@ -21,6 +21,7 @@ export class ContactsComponent implements OnInit {
       this.ItemsArray = res;
 
     })
+    window.location.reload();
   }
 
 }

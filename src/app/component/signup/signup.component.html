@@ -47,7 +47,7 @@
             </div>
             <div *ngIf="phone.errors.maxlength">
               Phone number must be at most 13 characters
-            </div> -->
+            </div> 
           </div>
         </div>
       </div>
@@ -62,9 +62,7 @@
             value="is_patient" mdbInput required>
           <label class="custom-control-label" for="patient"><span></span> Patient</label>
         </div>
-        <!-- <div class="alert-danger" *ngIf="username.errors && f.submitted">
-            <div *ngIf="username.errors.required">Username is required</div>
-          </div> -->
+      
 
 
       </div>
@@ -72,7 +70,7 @@
         <input type="password" placeholder="Password" class="form-control" name="password" [(ngModel)]="form.password"
           required minlength="6" #password="ngModel" />
         <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-          At least 8 characters and 1 digit
+          Your password should be At least 8 characters and 1 digit
         </small>
         <div class="alert-danger" *ngIf="password.errors && f.submitted">
           <div *ngIf="password.errors.required">Password is required</div>
