@@ -50,15 +50,13 @@
         <label for="user">User</label>
         <input type="text" class="form-control" id="user" [(ngModel)]="newInput.user" name="user" #name='ngModel' required>
       </div>-->
+        
+        <a class="btn btn-primary" routerLink="/googlemaps">Pin Location</a>
+      
         <div class="form-group">
-            
+            <label for="name">Location</label>
+            <input type="text" placeholder="my location" value="{{storedlocation}}" class="form-control" readonly required/>
 
-            <input type="text" class="form-control" id="location" [(ngModel)]="newInput.location" name="location"
-                #name='ngModel'  required>
-
-            <input type="text" placeholder="my location" value="" />
-
-           
         </div>
         <div class="form-group">
             <div class="form-group">
@@ -73,15 +71,6 @@
         </div>
     </form>
    
-    <p>{{storedlocation}}</p>
-    <!-- <label for="location">Coordinates</label>
-
-  <input type="text" placeholder="my location" value="" />
-
-  <label for="location">Location</label>
-
-  <input type="text" placeholder="coordinates" id="mycoordinates" /> -->
-
-
+    
 
 </div>
