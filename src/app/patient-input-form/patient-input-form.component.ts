@@ -23,6 +23,7 @@ export class PatientInputFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.user_id = localStorage.getItem('user_id')
+    console.log(this.user_id)
   }
   submitInput(): void {
     this.user_id = localStorage.getItem('user')    

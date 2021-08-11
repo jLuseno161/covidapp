@@ -25,6 +25,7 @@ import { DoctorsComponent } from './component/doctors/doctors.component';
 import { PatientDashComponent } from './component/patient-dash/patient-dash.component';
 import { ContactsComponent } from './component/contacts/contacts.component';
 import { PatientsComponent } from './component/patients/patients.component';
+import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -61,8 +62,7 @@ import { PatientsComponent } from './component/patients/patients.component';
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  // providers: [],
-  providers: [authInterceptorProviders],
+  providers: [authInterceptorProviders,NgbModalConfig, NgbModal],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

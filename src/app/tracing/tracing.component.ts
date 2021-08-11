@@ -15,17 +15,12 @@ export class TracingComponent implements OnInit {
     date: new Date(),
   };
 
-  isSuccessful = false;
-  isSignUpFailed = false;
   errorMessage = '';
   ItemsArray!: any[];
   userContacts!: any[];
   user_id: any;
   username: string;
   counter: number;
-
-  // newTracing = new Tracing("", "", 0, new Date());
-  @Output() addTracing = new EventEmitter<Tracing>();
 
   constructor(private tracingService: TracingRequestService) { }
   ngOnInit(): void {
