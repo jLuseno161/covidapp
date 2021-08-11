@@ -10,6 +10,7 @@ import { PatientInputFormComponent } from './patient-input-form/patient-input-fo
 import { DoctorInputFormComponent } from './doctor-input-form/doctor-input-form.component';
 import { ResultsComponent } from './results/results.component';
 import { DoctorInputComponent } from './doctor-input/doctor-input.component';
+import { MapComponent } from './component/map/map.component';
 import { PatientsComponent } from './component/patients/patients.component';
 
 const routes: Routes = [
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path:'docinput', component: DoctorInputFormComponent },
   { path: 'results', component: ResultsComponent },
   { path: 'doccomponent', component:  DoctorInputComponent},
+  {path: 'googlemaps', component: MapComponent}, 
   {path:'patients',component: PatientsComponent},
 
 

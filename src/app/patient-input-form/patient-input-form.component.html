@@ -10,10 +10,16 @@
       <input type="text" class="form-control" id="name" [(ngModel)]="newInput.name" name="name" #name='ngModel'
         required>
     </div>
+    <a class="btn btn-primary" routerLink="/googlemaps">Pin Location</a>
+
     <div class="form-group">
       <label for="location">Location</label>
       <input type="text" class="form-control" id="location" [(ngModel)]="newInput.location" name="location"
         #name='ngModel' required>
+    </div>
+    <div class="form-group">
+      <label for="name">Location</label>
+      <input type="text" placeholder="my location" value="{{storedlocation}}" class="form-control" readonly required />
     </div>
     <div class="form-group">
       <div class="form-group">
