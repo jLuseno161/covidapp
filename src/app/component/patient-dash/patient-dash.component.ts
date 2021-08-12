@@ -12,6 +12,7 @@ import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class PatientDashComponent implements OnInit {
 
   username: string;
+  location: string;
   user_id: any
   patientsStatus: any;
   patient: any;
@@ -19,19 +20,22 @@ export class PatientDashComponent implements OnInit {
   newArray: any[]
   patientsStat: any[];
 
-  constructor(private authService: AuthService ,config: NgbModalConfig, private modalService: NgbModal) {
+  constructor(private authService: AuthService, config: NgbModalConfig, private modalService: NgbModal) {
     // customize default values of modals used by this component tree
     config.backdrop = 'static';
     config.keyboard = false;
   }
 
   open(content) {
-    this.modalService.open(content);
+    this.modalService.open(content, {
+      size: 'xl',
+    });
   }
   ngOnInit(): void {
 
     this.username = localStorage.getItem('username')
     this.user_id = localStorage.getItem('user_id')
+    this.location = localStorage.getItem('location')
 
     this.authService.getStatus().subscribe((res: any[]) => {
       this.patientsNames = res;
