@@ -398,3 +398,12 @@ nav .profile-details i{
     display: none;
   }
 }
+
+
+@media (min-width: 1400px){
+
+  .my-modal-popup .modal-xl {
+      width: 1308px;
+  }       
+
+}

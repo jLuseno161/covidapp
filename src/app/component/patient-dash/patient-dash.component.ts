@@ -19,14 +19,16 @@ export class PatientDashComponent implements OnInit {
   newArray: any[]
   patientsStat: any[];
 
-  constructor(private authService: AuthService ,config: NgbModalConfig, private modalService: NgbModal) {
+  constructor(private authService: AuthService, config: NgbModalConfig, private modalService: NgbModal) {
     // customize default values of modals used by this component tree
     config.backdrop = 'static';
     config.keyboard = false;
   }
 
   open(content) {
-    this.modalService.open(content);
+    this.modalService.open(content, {
+      size: 'xl',
+    });
   }
   ngOnInit(): void {
 

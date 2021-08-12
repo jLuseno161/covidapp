@@ -2,12 +2,12 @@
 
 <html lang="en" dir="ltr">
 
-<body style="padding-top: 5%;">
+<body style="margin-top: 4.5%;">
   <div class="sidebar">
-    <div class="logo-details">
+    <!-- <div class="logo-details">
       <i class='bx bxl-c-plus-plus'></i>
       <span class="logo_name">Infrahealth</span>
-    </div>
+    </div> -->
     <ul class="nav-links">
       <li>
         <a href="#" class="active">
@@ -78,16 +78,16 @@
             </div>
             <div class="indicator">
               <i class='bx bx-up-arrow-alt'></i>
-              <span class="text">Up from yesterday</span>
+              <span class="text"></span>
             </div>
           </div>
         </div>
-        <div class="box"  (click)="open(content)">
+        <div class="box" routerLink="/googlemaps">
           <div class="right-side">
-            <div class="box-topic">Checkin</div>
-            <div class="number"></div>
+            <div class="box-topic">See Doctor</div>
+            <div class="number">Check-in</div>
             <div class="indicator">
-              <img src="https://img.icons8.com/ios/28/4a90e2/add--v1.png"/>
+              <i class='bx bx-up-arrow-alt'></i>
             </div>
           </div>
         </div>
@@ -102,25 +102,24 @@
         </div>
       </div>
       <div class="sales-boxes">
-        <!-- <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button> -->
-        <ng-template #content let-c="close" let-d="dismiss" style="margin-right: 20px;">
+       <!-- <ng-template #content let-c="close" let-d="dismiss" style="margin-right: 20px;">
           <div style="margin: 5%;">
             <div class="modal-header">
               <h2 class="modal-title" id="modal-basic-title">Checkin</h2>
-              <!-- <button type="button" class="close" style="border: 0px solid white" aria-label="Close" (click)="d('Cross click')">
-                <span aria-hidden="true">&times;</span>
-              </button> -->
-              <button type="button" class="btn btn-md btn-outline-success" style="padding:2%; color:white" (click)="d('Save click')">Close</button>
+              <button type="button" class="btn btn-md btn-outline-success" style="padding:2%; color:white"
+                (click)="d('Save click')">Close</button>
 
             </div>
-            <div class="modal-body">
-              <app-patient-input-form></app-patient-input-form>
+            <div class="modal-body d-flex">
+              <div class="col-md-6">
+                <app-patient-input-form></app-patient-input-form>
+              </div>
+              <div class="col-md-6">
+                <app-map></app-map>
+              </div>
             </div>
-            <!-- <div class="modal-footer">
-              <button type="button" class="btn btn-md btn-info" style="margin-top:2%; color:white" (click)="c('Save click')">Close</button>
-            </div> -->
           </div>
-        </ng-template>
+        </ng-template> -->
 
         <div class="recent-sales box">
           <div class="title">
