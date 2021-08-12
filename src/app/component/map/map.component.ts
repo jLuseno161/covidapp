@@ -40,6 +40,7 @@ export class MapComponent implements OnInit {
     location: null,
   };
   user_id: any;
+  username: any;
 
   // map
   public address!: any;
@@ -65,24 +66,27 @@ export class MapComponent implements OnInit {
   ngOnInit() {
     new initMap();
     this.user_id = localStorage.getItem('user_id')
+    this.username = localStorage.getItem('username')
     this.storedlocation = localStorage.getItem("address");
     this.storedcoord = localStorage.getItem("coordinates");
+    
   }
 
   submitInput(): void {
     this.storedlocation = localStorage.getItem("address");
     this.storedcoord = localStorage.getItem("coordinates");
     this.storedcity = localStorage.getItem("locality")
-    console.log(this.storedlocation)
     this.user_id = localStorage.getItem('user_id')
-    let location = this.storedlocation + ',' + this.storedcity
+    this.username = localStorage.getItem('username')
+    let location = this.storedlocation + ',' + this.storedcoord
     let user = this.user_id
-    console.log(user)
-    let { name, symptoms } = this.newInput;
+    let name = this.username
+    
+    let {symptoms } = this.newInput;
     this.patientInput = { user, name, location, symptoms }
     console.log(this.patientInput)
 
-    this.resultsService.addPatient(user, name, location, symptoms).subscribe(
+    this.resultsService.addPatient(user = this.user_id, name = this.username, location =this.storedlocation + ',' + this.storedcoord, symptoms).subscribe(
       data => {
         console.log(data);
       },
