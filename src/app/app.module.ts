@@ -33,6 +33,7 @@ import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 // import { MatGoogleMapsAutocompleteModule } from '@angular-material-extensions/google-maps-autocomplete';
 import { MapComponent } from './component/map/map.component';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -73,6 +74,7 @@ import { MapComponent } from './component/map/map.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    ToastrModule.forRoot(), // ToastrModule added
 
     // AgmCoreModule.forRoot({
     //   apiKey: 'AIzaSyBWTLpNCpgZ8M5TAv0ViEDT8LpbODG1bXI',

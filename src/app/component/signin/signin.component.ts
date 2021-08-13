@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services//auth.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
@@ -19,7 +20,7 @@ export class SigninComponent implements OnInit {
   roles: string[] = [];
 
   constructor(private authService: AuthService, private router: Router,
-    private tokenStorage: TokenStorageService) { }
+    private tokenStorage: TokenStorageService,private toastr: ToastrService) { }
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
@@ -33,6 +34,8 @@ export class SigninComponent implements OnInit {
     }
   }
 
+
+
   onSubmit() {
     this.authService.login(this.form).subscribe((res: Response) => {
       console.log(res)
@@ -40,7 +43,9 @@ export class SigninComponent implements OnInit {
       localStorage.setItem('username', res['username'])
       localStorage.setItem('user_id', res['user_id'])
       localStorage.setItem('role', res['role'])
-
+    
+      this.toastr.success('Logged in successfully.Welcome to Covid Tracker.');
+  
       if ((res['role']) === "is_doctor") {
         this.router.navigate(['doctor']);
       }
@@ -49,8 +54,9 @@ export class SigninComponent implements OnInit {
       }
 
     }, error => {
-      console.log('error')
+      this.toastr.error('Kindly provide the correct credentials');
     })
+   
   }
 
   reloadPage(): void {
