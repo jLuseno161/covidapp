@@ -88,14 +88,14 @@ function store() {
   var locality = document.getElementById("locality").value
   localStorage.setItem("address", address);
   localStorage.setItem("coordinates", coordinates);
-  localStorage.setItem("locality"), locality;
-  // console.log(address)
+  localStorage.setItem("locality", locality);
+
   var storedlocation = localStorage.getItem("address")
   var storedcoord = localStorage.getItem("coordinates");
   var storedcity = localStorage.getItem("locality")
-  // console.log(stored)
+
   document.getElementById("coordinates").value = (storedcoord);
-  document.getElementById("locality").value = (storedlocation)
+  document.getElementById("location").value = (storedlocation)
   document.getElementById("locality").value = (storedcity)
 }
 

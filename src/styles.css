@@ -16,8 +16,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
   .maps {
     display: flex;
-    height: 500px;
-    width: 600px;
+    height: 100%;
+    width: 100%;
   }
 
   .mymaps {
@@ -29,23 +29,24 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     justify-content: space-around;
   }
 
-  .half-input-container {
+  /* .half-input-container {
     display: flex;
     justify-content: space-between;
-  }
+  } */
 
-  .half-input {
+  /* .half-input {
     max-width: 120px;
-  }
+  } */
 
   .map {
-    width: 300px;
+    width: 100%;
+    height: auto !important;
   }
 
   input {
     height: 30px;
   }
-
+/* 
   .details {
     border: 0;
     border-bottom: 1px solid black;
@@ -53,7 +54,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     font-family: Roboto, sans-serif;
     font-style: normal;
     font-weight: normal;
-  }
+  } */
 
   input:focus::placeholder {
     color: white;

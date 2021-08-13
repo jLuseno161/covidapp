@@ -28,10 +28,8 @@ export class MapComponent implements OnInit {
   storedcoord: any;
   storedcity: any;
   newInput: any = {
-    // user: null,
     name: null,
     symptoms: null,
-    // location: null,
   };
   patientInput: any = {
     user: null,
@@ -42,17 +40,17 @@ export class MapComponent implements OnInit {
   user_id: any;
   username: any;
 
-  // map
   public address!: any;
+  public locality!: any;
   public coordinates!: any;
   public queryResult!: string;
 
-  public location = { address: this.address, coordinates: this.coordinates }
+  public location = { address: this.address, coordinates: this.coordinates, locality: this.locality };
 
   public addLocation() {
     this.location.address = this.address
     this.location.coordinates = this.coordinates
-
+    this.location.locality = this.locality
     this.locationStorage.setItem(this.address, JSON.stringify(this.location))
   }
 
@@ -69,7 +67,7 @@ export class MapComponent implements OnInit {
     this.username = localStorage.getItem('username')
     this.storedlocation = localStorage.getItem("address");
     this.storedcoord = localStorage.getItem("coordinates");
-    
+    this.storedcity = localStorage.getItem("locality");
   }
 
   submitInput(): void {
@@ -78,15 +76,15 @@ export class MapComponent implements OnInit {
     this.storedcity = localStorage.getItem("locality")
     this.user_id = localStorage.getItem('user_id')
     this.username = localStorage.getItem('username')
-    let location = this.storedlocation + ',' + this.storedcoord
+    let location = this.storedcity + ' , ' + this.storedcoord
     let user = this.user_id
     let name = this.username
-    
-    let {symptoms } = this.newInput;
+
+    let { symptoms } = this.newInput;
     this.patientInput = { user, name, location, symptoms }
     console.log(this.patientInput)
 
-    this.resultsService.addPatient(user = this.user_id, name = this.username, location =this.storedlocation + ',' + this.storedcoord, symptoms).subscribe(
+    this.resultsService.addPatient(user = this.user_id, name = this.username, location = this.storedcity + ' , ' + this.storedcoord, symptoms).subscribe(
       data => {
         console.log(data);
       },
