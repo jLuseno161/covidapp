@@ -1,7 +1,6 @@
-<div class="container text-center" style="margin-top:10%">
+<div class="container text-center" style="margin-top:5%">
   <h2 class="text-center">See Patient</h2>
-
-  <div class="col-md-12"> <input type="text" id="searchTextId" class="form-control" [(ngModel)]="searchText"
+  <div class="col-md-12" style="margin-top:5%"> <input type="text" id="searchTextId" class="form-control" [(ngModel)]="searchText"
       name="searchText" placeholder="Search By Name">
   </div>
   <div class="container-fluid">
@@ -15,7 +14,6 @@
           <th>Remark</th>
         </tr>
       </thead>
-
       <tbody>
         <tr *ngFor="let item of ItemsArray | filter:searchText" class="text-left">
           <th></th>
@@ -24,7 +22,6 @@
           <td>{{ item.symptoms}}</td>
           <td style="font-size:17px;"><a routerLink="/docinput" class="btn btn-info btn-sm" type="submit">remark</a>
           </td>
-
         </tr>
       </tbody>
     </table>
