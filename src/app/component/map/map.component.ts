@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-// import { UserLocation } from 'src/app/location';
-// import { LocationServiceService } from '../location-service.service';
-
 import { HttpClient } from '@angular/common/http';
 import { LocationStorageService } from 'src/app/services/location-storage.service';
 import { PatientInputService } from 'src/app/patient-input.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 declare var initMap: any;
 
@@ -22,7 +20,7 @@ export class MapComponent implements OnInit {
 
   title = 'covidapp';
 
-  constructor(private locationStorage: LocationStorageService, private router: Router, private resultsService: PatientInputService) { }
+  constructor(private locationStorage: LocationStorageService, private router: Router, private resultsService: PatientInputService,  private toastr: ToastrService) { }
   //patient formatted_address
   storedlocation: any;
   storedcoord: any;
@@ -92,6 +90,10 @@ export class MapComponent implements OnInit {
     alert('Your session has been updated successfully. Kindly wait the doctors feedback')
     this.router.navigate(['patient']);
   }
+  showSuccess() {
+    this.toastr.success('Your session has been updated successfully. Kindly wait the doctors feedback');
+  }
+
 }
 
 

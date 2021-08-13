@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { DoctorInput } from '../doctor-input-class/doctor-input';
 import { DoctorInputService } from '../doctor-input.service';
 import { AuthService } from '../services/auth.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-doctor-input-form',
@@ -19,8 +20,12 @@ export class DoctorInputFormComponent implements OnInit {
   patientsNames!: any[];
   patients: any[];
 
+  showSuccess() {
+    this.toastr.success('Recomendations successfully submitted and updated to the patients dashboard');
+  }
 
-  constructor(private doctorInputService: DoctorInputService, private authService: AuthService) { }
+
+  constructor(private doctorInputService: DoctorInputService, private authService: AuthService, private toastr: ToastrService) { }
   ngOnInit(): void {
     this.authService.getUsers().subscribe((res: any[]) => {
       this.patientsNames = res;
