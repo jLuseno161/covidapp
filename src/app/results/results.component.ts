@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Results} from '../results-class/results';
-import {ResultsRequestService} from '../results-service/results.service';
+import { Results } from '../results-class/results';
+import { ResultsRequestService } from '../results-service/results.service';
 
 @Component({
   selector: 'app-results',
@@ -8,23 +8,24 @@ import {ResultsRequestService} from '../results-service/results.service';
   styleUrls: ['./results.component.css']
 })
 export class ResultsComponent implements OnInit {
+  searchText: string;
 
   ItemsArray!: Results[];
-  // ItemsArray= [];
+  public search: any = '';
+  locked: any[] = [];
 
-  addNewInput(ItemsArray){
+  addNewInput(ItemsArray) {
     let inputLength = this.ItemsArray.length;
-    ItemsArray.id = inputLength+1;
+    ItemsArray.id = inputLength + 1;
     this.ItemsArray.push(ItemsArray)
   }
 
   constructor(private resultRequestService: ResultsRequestService) { }
 
   ngOnInit() {
-    this.resultRequestService.getData().subscribe((res: any[])=>{
-      this.ItemsArray= res;
-      console.log (this.ItemsArray)
-    })  
+    this.resultRequestService.getData().subscribe((res: any[]) => {
+      this.ItemsArray = res;
+    })
   }
 
 }
