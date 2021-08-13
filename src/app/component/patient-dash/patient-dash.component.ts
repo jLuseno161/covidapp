@@ -12,6 +12,7 @@ import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class PatientDashComponent implements OnInit {
 
   username: string;
+  location: string;
   user_id: any
   patientsStatus: any;
   patient: any;
@@ -34,6 +35,7 @@ export class PatientDashComponent implements OnInit {
 
     this.username = localStorage.getItem('username')
     this.user_id = localStorage.getItem('user_id')
+    this.location = localStorage.getItem('location')
 
     this.authService.getStatus().subscribe((res: any[]) => {
       this.patientsNames = res;

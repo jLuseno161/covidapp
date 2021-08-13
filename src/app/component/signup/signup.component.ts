@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  styleUrls: ['./signup.component.css'],
 })
 export class SignupComponent implements OnInit {
   form: any = {
@@ -19,26 +20,33 @@ export class SignupComponent implements OnInit {
   isSignUpFailed = false;
   errorMessage = '';
 
-  constructor(private authService: AuthService,private router: Router,) { }
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private toastr: ToastrService
+  ) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  showSuccess() {
+    this.toastr.success('Successfully signed up');
   }
 
   onSubmit(): void {
-    const { username, email, phone,is_patient,is_doctor,role, password } = this.form;
+    const { username, email, phone, is_patient, is_doctor, role, password } =
+      this.form;
 
-    this.authService.register(username, email, phone,role, password).subscribe(
-      data => {
+    this.authService.register(username, email, phone, role, password).subscribe(
+      (data) => {
         console.log(data);
         this.isSuccessful = true;
         this.isSignUpFailed = false;
         this.router.navigate(['signin']);
       },
-      err => {
+      (err) => {
         this.errorMessage = err.error.message;
         this.isSignUpFailed = true;
       }
     );
   }
-
 }
