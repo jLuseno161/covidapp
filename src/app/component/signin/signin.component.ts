@@ -33,9 +33,6 @@ export class SigninComponent implements OnInit {
       password: '',
     }
   }
-
-
-
   onSubmit() {
     this.authService.login(this.form).subscribe((res: Response) => {
       console.log(res)

@@ -15,8 +15,8 @@ import { PatientsComponent } from './component/patients/patients.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
-  { path: 'signin', component: SigninComponent },
-  { path: 'signup', component: SignupComponent },
+  { path: 'home/signin', component: SigninComponent },
+  { path: 'home/signup', component: SignupComponent },
   { path: 'home', component: LandingpageComponent },
   { path: 'doctor', component: DocDashComponent },
   { path: 'patient', component: PatientDashComponent },

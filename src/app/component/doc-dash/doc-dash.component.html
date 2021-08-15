@@ -6,9 +6,17 @@
     cursor:pointer;
   }
 </style>
-<body style="margin-top: 4.5%;">
+<body>
+  
   <div class="sidebar">
+   
     <ul class="nav-links">
+      <li>
+        <a href="#" class="active">
+          <img src="https://img.icons8.com/ios-filled/45/000000/rod-of-asclepius.png"/>
+          <span class="links_name">Covid Tracker</span>
+        </a>
+      </li>
       <li>
         <a href="#" class="active">
           <i class='bx bx-grid-alt'></i>
@@ -35,6 +43,13 @@
           </a>
         </a>
       </li>
+      <li>
+        <a href="#" (click)="signOut()">
+          <i class='bx bx-log-out'></i>
+          <span class="links_name">Log out</span>
+         
+        </a>
+      </li>
     </ul>
   </div>
   <section class="home-section">
@@ -43,10 +58,10 @@
         <i class='bx bx-menu sidebarBtn'></i>
         <span class="dashboard">Dashboard</span>
       </div>
-      <div class="search-box">
+      <!-- <div class="search-box">
         <input type="text" placeholder="Search Contacts...">
         <i class='bx bx-search'></i>
-      </div>
+      </div> -->
     </nav>
     <div class="home-content">
       <div class="overview-boxes">

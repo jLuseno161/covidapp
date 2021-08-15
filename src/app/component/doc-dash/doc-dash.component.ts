@@ -3,7 +3,7 @@ import { DoctorInputService } from 'src/app/doctor-input-service/doctor-input.se
 // import {DoctorInputService} from '../doctor-input-service/doctor-input.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { TracingRequestService } from 'src/app/tracing-http/tracing-request.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-doc-dash',
   templateUrl: './doc-dash.component.html',
@@ -25,7 +25,7 @@ export class DocDashComponent implements OnInit {
 
 
 
-  constructor(private tracingService: TracingRequestService,private authService: AuthService) { }
+  constructor(private tracingService: TracingRequestService,private authService: AuthService,private router: Router,) { }
 
   ngOnInit(): void {
     this.username = localStorage.getItem('username')
@@ -51,5 +51,9 @@ export class DocDashComponent implements OnInit {
     })
 
   }
+  signOut(): void {
+    localStorage.clear();
+    this.router.navigate(['/']);
 
+  }
 }
