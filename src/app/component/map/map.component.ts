@@ -90,7 +90,7 @@ export class MapComponent implements OnInit {
       },
     );
     alert('Your session has been updated successfully. Kindly wait the doctors feedback')
-    this.router.navigate(['patient']);
+      this.router.navigate(['googlemaps']);
   }
 }
 

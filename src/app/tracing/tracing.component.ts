@@ -45,9 +45,8 @@ export class TracingComponent implements OnInit {
       },
       err => {
         this.errorMessage = err.error.message;
-
       }
     );
+    window.location.reload();
   }
-
 }

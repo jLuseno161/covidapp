@@ -44,7 +44,15 @@ export class PatientDashComponent implements OnInit {
       this.newArray = this.patientsNames.filter(patienty => patienty.name === this.username)
       this.patientsStat = this.newArray.reverse();
       this.patientsStatus = this.patientsStat[0]
-      console.log(this.patientsStat[0])
+
+      if (this.patientsStat[0] == undefined) {
+        this.patientsStatus = [
+          {
+            status: "N/A", recomendations: "None"
+          }
+        ];
+        console.log(this.patientsStatus.status)
+      }
     })
   }
   patients(patients: any) {
