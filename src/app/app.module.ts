@@ -26,22 +26,18 @@ import { PatientDashComponent } from './component/patient-dash/patient-dash.comp
 import { ContactsComponent } from './component/contacts/contacts.component';
 import { PatientsComponent } from './component/patients/patients.component';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
-// import { GoogleMapsModule } from '@angular/google-maps';
 import { CommonModule } from '@angular/common';
-// current location
-// import { AgmCoreModule } from '@agm/core';
 import { MatCardModule } from '@angular/material/card';
-// import { MatGoogleMapsAutocompleteModule } from '@angular-material-extensions/google-maps-autocomplete';
 import { MapComponent } from './component/map/map.component';
 import { ToastrModule } from 'ngx-toastr';
+import { SearchPipe } from './search.pipe';
 
 
 @NgModule({
   declarations:[
     AppComponent,
+    SearchPipe,
     MapComponent,
-
-  
     TracingComponent,
     ResultsComponent,
     DoctorInputComponent,
@@ -59,14 +55,13 @@ import { ToastrModule } from 'ngx-toastr';
     PatientDashComponent,
     ContactsComponent,
     PatientsComponent,
+    SearchPipe,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    // GoogleMapsModule,
     MatCardModule,
-    // MatGoogleMapsAutocompleteModule,
     HttpClientModule,
     CommonModule,
     BrowserAnimationsModule,
@@ -74,14 +69,7 @@ import { ToastrModule } from 'ngx-toastr';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    ToastrModule.forRoot(), // ToastrModule added
-
-    // AgmCoreModule.forRoot({
-    //   apiKey: 'AIzaSyBWTLpNCpgZ8M5TAv0ViEDT8LpbODG1bXI',
-    //   // apiKey: 'AIzaSyCR3F6p0cBZEcfs1U2S4u5b0T76o4eDRwU',
-    //   // libraries: ["places"],
-   
-    // }),
+    ToastrModule.forRoot(),
 
     BrowserAnimationsModule
   ],

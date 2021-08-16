@@ -3,7 +3,7 @@ import { DoctorInput } from '../doctor-input-class/doctor-input';
 import { DoctorInputService } from '../doctor-input.service';
 import { AuthService } from '../services/auth.service';
 import { ToastrService } from 'ngx-toastr';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-doctor-input-form',
   templateUrl: './doctor-input-form.component.html',
@@ -25,7 +25,7 @@ export class DoctorInputFormComponent implements OnInit {
   }
 
 
-  constructor(private doctorInputService: DoctorInputService, private authService: AuthService, private toastr: ToastrService) { }
+  constructor(private doctorInputService: DoctorInputService, private authService: AuthService, private toastr: ToastrService, private router: Router) { }
   ngOnInit(): void {
     this.authService.getUsers().subscribe((res: any[]) => {
       this.patientsNames = res;
@@ -42,6 +42,7 @@ export class DoctorInputFormComponent implements OnInit {
         // console.log(data);
       },
     );
-    window.location.reload();
+    this.router.navigate(['results']);
+    // window.location.reload();
   }
 }
