@@ -49,4 +49,17 @@ export class TracingComponent implements OnInit {
     );
     window.location.reload();
   }
+  deleteP(id) {
+    this.tracingService.deletePatient(id).subscribe(
+      (msg) => console.log(msg),
+      (error) => console.log(error)
+    );
+    window.location.reload();
+  }
+  updatePatient(id) {
+    this.tracingService.updatePatient(this.newTracing, id).subscribe( 
+      (msg) => console.log(msg),
+      (error) => console.log(error)
+    );
+  };
 }

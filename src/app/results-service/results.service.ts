@@ -23,8 +23,6 @@ export class ResultsRequestService {
 getData(): Observable<any[]> {
   return this.httpClient.get<any[]>(this.api);
 }
-
-
 }
 
 
