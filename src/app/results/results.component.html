@@ -20,7 +20,7 @@
           <td>{{ item.name }}</td>
           <td>{{ item.location }}</td>
           <td>{{ item.symptoms}}</td>
-          <td style="font-size:17px;"><a routerLink="/docinput" class="btn btn-info btn-sm"  click="giveRemark(item.id)">Remark</a>
+          <td style="font-size:17px;"><a routerLink="/docinput" class="btn btn-info btn-sm"  (click)="selected($event,item.id)">Remark</a>
           </td>
         </tr>
       </tbody>

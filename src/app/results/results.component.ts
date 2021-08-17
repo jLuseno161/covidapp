@@ -28,6 +28,11 @@ export class ResultsComponent implements OnInit {
     })
   }
 
+  public async selected(event, id: number):
+    Promise<void> {
+    this.resultRequestService.onDoctorSelect.next(id);
+  }
+
 }
 
 

@@ -1,14 +1,15 @@
 <div class="container-fluid" style="font-family: 'Yeon Sung', cursive; margin-top:3%; padding-top:10%">
-  <h2 class="text-center"  style="font-family: 'Yeon Sung', cursive;">Doctors' feedback form</h2>
+  <h2 class="text-center" style="font-family: 'Yeon Sung', cursive;">Doctors' feedback form</h2>
   <hr style="margin-left: 10%;">
+  <h3>Display</h3>
+  {{PatId}}
   <form (ngSubmit)='submitInput()' #inputForm='ngForm' style="margin-left: 9%;">
     <div class="form-group">
       <label for="name">Name</label>
       <div class="form-group">
-        <select [(ngModel)]="newInput.name" [ngModelOptions]="{standalone: true}" id="name" name="name" required
-          class="form-control">
-          <option *ngFor="let patient of patients" [value]="patient.username">
-            {{patient.username}}
+        <select [(ngModel)]="newInput.name" id="name" name="name" required class="form-control">
+          <option *ngFor="let patient of patients" [value]="patient.name">
+            {{patient.name}}
           </option>
         </select>
       </div>
