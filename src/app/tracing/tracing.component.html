@@ -48,10 +48,10 @@
             <td>{{ item.date}}</td>
 
             <td>
-              <a href="#editTracingModal" class="edit" data-toggle="modal"><i class="material-icons"
-                  data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-              <!-- <a href="#deleteTracingModal" class="delete" data-toggle="modal"><i class="material-icons"
-                  data-toggle="tooltip" title="Delete">&#xE872;</i></a> -->
+              <!-- <a href="#editTracingModal" class="edit" (click)="updatePatient(item.id)" data-toggle="modal"><i class="material-icons"
+                  data-toggle="tooltip" title="Edit">&#xE254;</i></a> -->
+              <a href="#deleteTracingModal" class="delete"  (click)="deleteP(item.id)" data-toggle="modal"><i class="material-icons"
+                  data-toggle="tooltip" title="Delete">&#xE872;</i></a>
             </td>
           </tr>
 

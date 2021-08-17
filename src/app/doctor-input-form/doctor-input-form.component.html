@@ -4,10 +4,9 @@
     <div class="form-group">
       <label for="name">Name</label>
       <div class="form-group">
-        <select [(ngModel)]="newInput.name" [ngModelOptions]="{standalone: true}" id="name" name="name" required
-          class="form-control">
-          <option *ngFor="let patient of patients" [value]="patient.username">
-            {{patient.username}}
+        <select [(ngModel)]="newInput.name" id="name" name="name" required class="form-control">
+          <option *ngFor="let patient of patients" [value]="patient.name">
+            {{patient.name}}
           </option>
         </select>
       </div>

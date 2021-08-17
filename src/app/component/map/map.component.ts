@@ -106,7 +106,7 @@ export class MapComponent implements OnInit {
   //     'Your session has been updated successfully. Kindly wait the doctors feedback'
   //   );
   // }
- back(){
+  back() {
     this.router.navigate(['patient']);
   }
 }

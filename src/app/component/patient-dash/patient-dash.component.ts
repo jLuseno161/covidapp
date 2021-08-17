@@ -39,12 +39,17 @@ export class PatientDashComponent implements OnInit {
 
     this.authService.getStatus().subscribe((res: any[]) => {
       this.patientsNames = res;
-      console.log(this.username)
-      console.log(this.patientsNames)
       this.newArray = this.patientsNames.filter(patienty => patienty.name === this.username)
       this.patientsStat = this.newArray.reverse();
       this.patientsStatus = this.patientsStat[0]
-      console.log(this.patientsStat[0])
+
+      if (this.patientsStat[0] == undefined) {
+        this.patientsStatus = [
+          {
+            status: "N/A", recomendations: "None"
+          }
+        ];
+      }
     })
   }
   patients(patients: any) {
