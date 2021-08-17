@@ -33,15 +33,15 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit(): void {
-    const { username, email, phone, is_patient, is_doctor, role, password } =
+    let { username, email, phone, is_patient, is_doctor, role, password } =
       this.form;
 
-    this.authService.register(username, email, phone, role, password).subscribe(
+    this.authService.register(username, email, phone, role='is_patient', password).subscribe(
       (data) => {
         console.log(data);
         this.isSuccessful = true;
         this.isSignUpFailed = false;
-        this.router.navigate(['signin']);
+        this.router.navigate(['home/signin']);
       },
       (err) => {
         this.errorMessage = err.error.message;

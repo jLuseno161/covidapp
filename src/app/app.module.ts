@@ -1,6 +1,5 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-// import {LocationServiceService} from './component/location-service.service'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TracingComponent } from './tracing/tracing.component';
@@ -18,7 +17,6 @@ import { SigninComponent } from './component/signin/signin.component';
 import { SignupComponent } from './component/signup/signup.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material.module';
-// import { FlexLayoutModule } from '@angular/flex-layout';
 import { authInterceptorProviders } from './helpers/auth.interceptor';
 import { DocDashComponent } from './component/doc-dash/doc-dash.component';
 import { DoctorsComponent } from './component/doctors/doctors.component';
