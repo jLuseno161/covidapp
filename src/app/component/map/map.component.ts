@@ -101,11 +101,7 @@ export class MapComponent implements OnInit {
     );
     // this.router.navigate(['patient']);
   }
-  // showSuccess() {
-  //   this.toastr.success(
-  //     'Your session has been updated successfully. Kindly wait the doctors feedback'
-  //   );
-  // }
+ 
   back() {
     this.router.navigate(['patient']);
   }
