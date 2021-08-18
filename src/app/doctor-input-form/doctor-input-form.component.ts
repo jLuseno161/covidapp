@@ -53,10 +53,9 @@ export class DoctorInputFormComponent implements OnInit {
     this.authService.getPatients().subscribe((res: any[]) => {
       this.patientsNames = res;
       // this.patients = res
-      console.log(this.PatId + 'dfghjkl')
-      console.log(this.patientsNames)
+      // console.log(this.PatId + 'dfghjkl')
+      // console.log(this.patientsNames)
       this.patients = this.patientsNames.filter(patient => patient.id === this.PatId)
-      console.log(this.patients)
 
     })
   }
